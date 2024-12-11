@@ -1,4 +1,4 @@
-import React, { useEffect,useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Core Swiper styles
 import { Navigation, Autoplay, EffectFade, Pagination } from 'swiper/modules';
@@ -13,7 +13,7 @@ function Hero() {
     const runAnimations = () => {
         anime({
             targets: '.hero-title',
-            translateY: [-50, 0], // Moves from -50px to 0px
+            translateY: [-200, 0],
             opacity: [0, 1], // Fade-in effect
             easing: 'easeOutExpo',
             duration: 1000,
@@ -22,7 +22,7 @@ function Hero() {
 
         anime({
             targets: '.hero-btn',
-            scale: [0.8, 1], // Scale from 0.8 to 1
+            scale: [1.4, 1], // Scale from 0.8 to 1
             opacity: [0, 1],
             easing: 'spring(1, 80, 10, 0)', // Spring effect for natural bounce
             delay: 1500, // Start after title animation
@@ -30,7 +30,7 @@ function Hero() {
 
         anime({
             targets: '.hero-img',
-            scale: [1.2, 1], // Zoom-out effect for background
+            scale: [1.5, 1], // Zoom-out effect for background
             easing: 'easeOutQuart',
             duration: 2000,
         });
