@@ -1,6 +1,7 @@
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
-import Service from "./sections/Service"
+import Destination from "./sections/Destination"
+import Values from "./sections/Values"
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     <div>
       <Navbar/>
        <Hero/>
-       <Service/>
+       <Destination/>
+       <Values/>
     </div>
     </>
   )

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import anime from "animejs";
 
-function Service() {
+function Values() {
   const serviceItemsRef = useRef([]);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function Service() {
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
       <h2 className="font-headline text-2xl font-semibold sm:text-3xl py-5 text-center">
         What We Offer To Our Client
       </h2>
@@ -113,4 +113,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default Values;
