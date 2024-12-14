@@ -1,28 +1,26 @@
-import Footer from "./components/Footer"
-import Hero from "./components/Hero"
-import Navbar from "./components/Navbar"
-import Destination from "./sections/Destination"
-import Package from "./sections/Package"
-import Values from "./sections/Values"
-import Video from "./sections/Video"
-import WhyChooseUs from "./sections/WhyChooseUs"
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+
 
 function App() {
-
-  return (
-    <>
-    <div>
-      <Navbar/>
-       <Hero/>
-       <Destination/>
-       <Values/>
-       <Video/>
-       <WhyChooseUs/>
-       <Package/>
-       <Footer/>
-    </div>
-    </>
-  )
+    return (
+        <Router>
+          <Navbar />
+            <Routes>
+                {/* Define Routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                {/* <Route path="/enjoyment" element={<EnjoymentVideo />} /> */}
+                {/* Catch-All Route for 404 */}
+                {/* <Route path="*" element={<NotFound />} /> */}
+            </Routes>
+            <Footer/>
+        </Router>
+    );
 }
 
-export default App
+export default App;
