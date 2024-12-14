@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import AboutHero from '../sections/AboutHero';
 import Testimony from '../sections/Testimony';
+import AboutUsSection from '../sections/AboutUsSection';
 
 
 function About() {
@@ -11,6 +12,7 @@ function About() {
         <div>
           <AboutHero/>
           <Testimony/>
+          <AboutUsSection/>
 
         </div>
     );
