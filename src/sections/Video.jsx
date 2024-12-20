@@ -16,7 +16,7 @@ function EnjoymentVideo() {
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <video
                         className="min-w-full min-h-full object-cover"
-                        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+                        src="/assets/photos/A Tour of Ethiopia's Amazing Landscapes.mp4"
                         type="video/mp4"
                         autoPlay
                         muted
@@ -26,11 +26,7 @@ function EnjoymentVideo() {
                     <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
                 </div>
 
-                {/* Video Content */}
-                <div className="z-10 space-y-2">
-                    <h1 className="font-light text-6xl">Pure Enjoyment</h1>
-                    <h3 className="font-light text-3xl">Brought to Life with TailwindCSS</h3>
-                </div>
+            
             </section>
         </div>
     );

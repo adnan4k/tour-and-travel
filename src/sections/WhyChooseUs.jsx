@@ -58,8 +58,7 @@ function WhyChooseUs() {
             role="contentinfo"
             className="text-base leading-5 mt-5 text-gray-600 dark:text-gray-200"
           >
-            We’re working on a suite of tools to make managing complex systems
-            easier for everyone, for free. We can’t wait to hear what you think!
+           Jemma Valley Ethiopia Tours envisions becoming a leading provider of immersive and transformative travel experiences, showcasing Ethiopia's rich cultural heritage, diverse landscapes, and historical significance.
           </p>
           <div className="w-56">
             <button
@@ -91,13 +90,12 @@ function WhyChooseUs() {
           >
             <div className="md:flex items-center justify-between">
               <h2 className="text-2xl  font-semibold leading-6 text-gray-800 dark:text-white">
-                Starter
+                Innovation
               </h2>
-             
+
             </div>
             <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200">
-              Full access to all features and no credit card required
-            </p>
+              We are committed to constantly improving our offerings by integrating new technologies and trends in the travel industry            </p>
           </div>
 
           <div
@@ -108,13 +106,12 @@ function WhyChooseUs() {
             <div className="w-full p-8">
               <div className="md:flex items-center justify-between">
                 <h2 className="text-2xl font-semibold leading-6 text-gray-800 dark:text-white">
-                  Personal
+                  Sustainability
                 </h2>
-               
+
               </div>
               <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200">
-                Unlimited product features and dedicated support channels
-              </p>
+                We are committed to promoting eco-friendly travel and preserving the natural beauty of Ethiopia.</p>
             </div>
           </div>
 
@@ -123,14 +120,13 @@ function WhyChooseUs() {
             className="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg p-8 relative z-30 mt-7 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
           >
             <div className="md:flex items-center justify-between">
-              <h2 className="text-2xl font-semibold leading-6 text-gray-800 dark:text-white">
-                Team
+              <h2 className="text-2xl w-full font-semibold leading-6 text-gray-800 dark:text-white">
+                Excellence
               </h2>
-            
+
             </div>
             <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200">
-              Unlimited product features and dedicated support channels
-            </p>
+            We strive to deliver exceptional service and create unforgettable experiences for our clients.            </p>
           </div>
         </div>
       </div>

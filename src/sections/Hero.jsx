@@ -41,86 +41,102 @@ function Hero() {
     }, []);
 
 
-    return (
-        <Swiper
-            onSlideChange={() => {
-                runAnimations(); // Trigger animations on every slide change
-            }}
-            // navigation={true}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-            pagination={{
-                clickable: true,
-            }}
-            speed={2000}
-            effect="slide" // Smooth fade transition
-            fadeEffect={{ crossFade: true }}
-            slidesPerView={1} // One slide visible at a time
-            spaceBetween={0} // No gap between slides for a seamless effect
-            loop={true} // Enables continuous looping
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            modules={[Autoplay, Pagination, Navigation]}
-
-        >
-            {/* Slide 1 */}
-            <SwiperSlide>
-                <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 h-screen text-white overflow-hidden">
-                    <div className="absolute inset-0">
-                        <img
-                            src="https://images.unsplash.com/photo-1522252234503-e356532cafd5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxjb2RlfGVufDB8MHx8fDE2OTQwOTg0MTZ8MA&ixlib=rb-4.0.3&q=80&w=1080"
-                            alt="Background"
-                            className="hero-img object-cover object-center w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black opacity-50"></div>
-                    </div>
-                    <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
-                        <h1 className=" hero-title text-5xl font-bold leading-tight mb-4">
-                            Welcome to Our Awesome Website 1
-                        </h1>
-                        <p className="text-lg hero-title text-gray-300 mb-8">
-                            Discover amazing features and services that await you.
-                        </p>
-                        <a
-                            href="#"
-                            className="bg-yellow-400 hero-btn text-white hover:bg-yellow-300 py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+   
+    
+    const slidesData = [
+        {
+            id: 1,
+            title: "Where Nature Meets Tradition",
+            description: "Experience the wonders of Ethiopia, from cascading waterfalls and dense forests to charming traditional houses.",
+            buttonText: "Get Started",
+            buttonLink: "#",
+            gradient: "from-purple-600 to-blue-600",
+            image:
+                "/assets/photos/houses.jpg",
+        },
+        {
+            id: 2,
+            title: "A Timeless Journey Through Ethiopia",
+            description: "Discover amazing features and services that await you.",
+            buttonText: "Get Started",
+            buttonLink: "#",
+            gradient: "from-green-600 to-blue-600",
+            image:
+                "/assets/photos/forest.jpg",
+        },
+        {
+            id: 2,
+            title: "Explore Ethiopia's Hidden Gems",
+            description: "Uncover the beauty of Ethiopia — towering waterfalls, lush green landscapes, and timeless traditions",
+            buttonText: "Get Started",
+            buttonLink: "#",
+            gradient: "from-green-600 to-blue-600",
+            image:
+                "/assets/photos/waterfall.jpg",
+        },
+        {
+            id: 2,
+            title: "Ethiopia Awaits: Adventure in Every Corner",
+            description: "Step into a land of extraordinary beauty — roaring waterfalls, pristine forests, and unique heritage",
+            buttonText: "Get Started",
+            buttonLink: "#",
+            gradient: "from-green-600 to-blue-600",
+            image:
+                "/assets/photos/gates.jpg",
+        },    ];
+    
+    
+     
+    
+        return (
+            <Swiper
+                onSlideChange={() => {
+                    runAnimations(); // Trigger animations on every slide change
+                }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                speed={2000}
+                effect="slide"
+                fadeEffect={{ crossFade: true }}
+                slidesPerView={1}
+                spaceBetween={0}
+                loop={true}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                modules={[Autoplay, Pagination, Navigation]}
+            >
+                {slidesData.map((slide) => (
+                    <SwiperSlide key={slide.id}>
+                        <div
+                            className={`relative bg-gradient-to-r ${slide.gradient} h-screen text-white overflow-hidden`}
                         >
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-            </SwiperSlide>
-
-            {/* Slide 2 */}
-            <SwiperSlide>
-                <div className="relative bg-gradient-to-r from-green-600 to-blue-600 h-screen text-white overflow-hidden">
-                    <div className="absolute inset-0">
-                        <img
-                            src="https://images.unsplash.com/photo-1581090700227-1e37e6b8db69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxjb2RlfGVufDB8MHx8fDE2OTQwOTg0MTZ8MA&ixlib=rb-4.0.3&q=80&w=1080"
-                            alt="Background"
-                            className="hero-img object-cover object-center w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black opacity-50"></div>
-                    </div>
-                    <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
-                        <h1 className="text-5xl hero-title font-bold leading-tight mb-4">
-                            Welcome to Our Awesome Website 2
-                        </h1>
-                        <p className="hero-title text-lg text-gray-300 mb-8">
-                            Discover amazing features and services that await you.
-                        </p>
-                        <a
-                            href="#"
-                            className="bg-yellow-400 hero-btn text-[#56C596] hover:bg-yellow-300 py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
-                        >
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-            </SwiperSlide>
-        </Swiper>
-    );
-}
+                            <div className="absolute inset-0">
+                                <img
+                                    src={slide.image}
+                                    alt={`Slide ${slide.id}`}
+                                    className="hero-img object-cover object-center w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-black opacity-50"></div>
+                            </div>
+                            <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
+                                <h1 className="hero-title text-5xl font-bold leading-tight mb-4">
+                                    {slide.title}
+                                </h1>
+                                <p className="text-lg hero-title text-gray-300 mb-8">
+                                    {slide.description}
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        );
+    }
+    
 
 export default Hero;
