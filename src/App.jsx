@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import Booking from './pages/Booking';
+import Destinations from './pages/Destinations';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
                 <Route path="/blogs" element={<Blog />} />
                 <Route path="/blog-detail" element={<BlogDetail />} />
                 <Route path="/contact-us" element={<Contact />} />
+                <Route path="/book" element={<Booking />} />
+                <Route path='/destinations' element={<Destinations />} />
 
 
                 {/* <Route path="/enjoyment" element={<EnjoymentVideo />} /> */}

@@ -6,6 +6,7 @@ import WhyChooseUs from '../sections/WhyChooseUs'
 import Package from '../sections/Package'
 import Subscription from '../sections/Subscription'
 import EnjoymentVideo from '../sections/Video'
+import Gallery from '../sections/Gallery'
 
 function Home() {
     return (
@@ -16,6 +17,7 @@ function Home() {
                 <Values />
                 <EnjoymentVideo />
                 <WhyChooseUs />
+                {/* <Gallery /> */}
                 <Package />
                 <Subscription />
             </div>

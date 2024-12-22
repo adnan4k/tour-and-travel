@@ -84,6 +84,7 @@ function Destination() {
                     </div>
                 </div>
             </section>
+            
         </div>
     );
 }

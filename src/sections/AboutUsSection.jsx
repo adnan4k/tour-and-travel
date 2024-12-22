@@ -1,6 +1,21 @@
 import React from 'react'
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { SwiperSlide, Swiper } from 'swiper/react';
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 function AboutUsSection() {
+
+
+    const images = [
+        "https://images.unsplash.com/photo-1531973576160-7125cd663d86",
+        "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47",
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308"
+    ];
     return (
         <div>
             <section class="bg-gray-100">
@@ -18,8 +33,30 @@ function AboutUsSection() {
                             </div>
                         </div>
                         <div class="mt-12 md:mt-0">
-                            <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86" alt="About Us Image" class="object-cover rounded-lg shadow-md"/>
+                            <Swiper
+                             
+                                spaceBetween={30}
+                                centeredSlides={true}
+                                autoplay={{
+                                    delay: 2500,
+                                    disableOnInteraction: false,
+                                  }}
+                                pagination={{
+                                    clickable: true,
+                                  }}
+                                className="mySwiper"
+                            >
+                                {images.map((src, index) => (
+                                    <SwiperSlide key={index}>
+                                        <img src={src} alt={`Slide ${index}`} className="object-cover rounded-lg shadow-md" />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </div>
+
+
+
+
                     </div>
                 </div>
             </section>
