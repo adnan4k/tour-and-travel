@@ -1,98 +1,83 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Card = ({ image, title, category, description, link }) => (
-  <div className="sm:col-span-6 lg:col-span-5">
-    <a href={link}>
-      <div
-        className="h-56 bg-cover text-center overflow-hidden"
-        style={{ backgroundImage: `url(${image})` }}
-        title={title}
-      ></div>
-    </a>
-    <div className="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-      <div className="lg:pl-16">
-        <a
-          href={link}
-          className="text-xs text-indigo-600 uppercase font-medium mb-3 flex items-center hover:text-gray-900 transition duration-500 ease-in-out"
-        >
-          {category}
-        </a>
-        <a
-          href={link}
-          className="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 transition duration-500 ease-in-out"
-        >
-          {title}
-        </a>
-        <p className="text-gray-700 text-xs mt-2">{description}</p>
-      </div>
-    </div>
-  </div>
-);
+function Destinations() {
+    return (
+        <div>
+            <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                    <img
+                        src="assets/photos/monkey.jpg"
+                        alt="Background Image"
+                        className="w-full h-full object-cover opacity-60"
+                    />
+                </div>
 
-const SmallCard = ({ image, title, date, link }) => (
-  <div className="flex items-start mb-3 pb-3">
-    <a href={link} className="inline-block mr-3">
-      <div
-        className="w-20 h-20 bg-cover bg-center"
-        style={{ backgroundImage: `url(${image})` }}
-      ></div>
-    </a>
-    <div className="text-sm">
-      <p className="text-gray-600 text-xs">{date}</p>
-      <a
-        href={link}
-        className="text-gray-900 font-medium hover:text-indigo-600 leading-none"
-      >
-        {title}
-      </a>
-    </div>
-  </div>
-);
+                {/* Content */}
+                <div className="cursor-pointer relative max-w-screen-lg mx-auto px-8 z-10 text-center text-white">
+                    {/* Title */}
+                    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-8">
+                        Destinations
+                    </h1>
 
-const Destinations = () => {
-  const smallCards = [
-    {
-      image:
-        'https://media.gettyimages.com/photos/cristiano-ronaldo-of-juventus-fc-looks-dejected-during-the-uefa-of-picture-id1227967060?k=6&m=1227967060&s=612x612&w=0&h=cMSMlRyI6YAzcE_C2KgHGRLeVojHYoUhIvhwPBYv8f4=',
-      title: 'Cristiano Ronaldo of Juventus FC looks dejected during the...',
-      date: 'Aug 18',
-      link: '#',
-    },
-    {
-      image:
-        'https://media.gettyimages.com/photos/lionel-messi-and-marcandre-ter-stegen-of-fc-barcelona-waits-in-the-picture-id1266763488?k=6&m=1266763488&s=612x612&w=0&h=8vxz9HfQVfrff5N7d1lBVxtLamRQGK3J3lyHkUuuIiw=',
-      title: 'Barcelona v Bayern Munich',
-      date: 'Jan 18',
-      link: '#',
-    },
-    // Add more small cards here
-  ];
+                    {/* Path (Center and Indicating "Home") */}
+                    <div className="text-lg md:text-2xl font-semibold mb-12 bg-white text-indigo-800 py-4 px-6 rounded-full shadow-lg inline-block">
+                        <Link to='/' className="inline">Home</Link>  → Destinations
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="max-w-full ml-14 md:left-30">
+                    <div class="bg-white text-4xl ml-5 font-bold text-indigo-800 black mix-blend-screen px-6 py-5 ">Destinations</div>
+                </div>
+                <div class="w-full grid grid-cols-2  gap-6 mx-auto p-5 sm:p-5 md:p-8">
 
-  return (
-    <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
-      <div className="grid grid-cols-1 sm:grid-cols-12 gap-10">
-        <Card
-          image="https://tailwindcss.com/img/card-left.jpg"
-          title="The perfect summer sweater that you can wear!"
-          category="Fashion"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil."
-          link="#"
-        />
-        <div className="sm:col-span-6 lg:col-span-4">
-          {smallCards.map((card, index) => (
-            <SmallCard key={index} {...card} />
-          ))}
+                    <div class="rounded overflow-hidden flex flex-col max-w-2xl mx-auto border">
+                        <div class="sm:flex justify-between items-center pt-4 px-5">
+                            <a href="#"
+                                class="sm:w-8/12 font-medium text-md inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
+                                Best Activewear from the Nordstrom Anniversary Sale</a>
+
+                        </div>
+
+                        <div class="relative">
+                            <a href="#">
+                                <img class="w-full max-h-56" src="assets/photos/mountain.jpg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=625.0&amp;sharp=10&amp;w=1500" alt="Sunset in the mountains" />
+                            </a>
+
+                            <a href="#!"
+                                class="hidden absolute z-10 text-xs absolute bottom-0 right-0 bg-indigo-600 px-6 m-2 py-2 text-white hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out sm:flex items-center"><span class="text-lg">|</span>&nbsp;&nbsp;<span>Read more</span></a>
+
+                        </div>
+
+
+                    </div>
+                    <div class="rounded overflow-hidden flex flex-col max-w-2xl mx-auto border">
+                        <div class="sm:flex justify-between items-center pt-4 px-5">
+                            <a href="#"
+                                class="sm:w-8/12 font-medium text-md inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
+                                Best Activewear from the Nordstrom Anniversary Sale</a>
+
+                        </div>
+
+                        <div class="relative">
+                            <a href="#">
+                                <img class="w-full max-h-56" src="assets/photos/holka.jpg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=625.0&amp;sharp=10&amp;w=1500" alt="Sunset in the mountains" />
+                            </a>
+
+                            <a href="#!"
+                                class="hidden absolute z-10 text-xs absolute bottom-0 right-0 bg-indigo-600 px-6 m-2 py-2 text-white hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out sm:flex items-center"><span class="text-lg">|</span>&nbsp;&nbsp;<span>Read more</span></a>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <Card
-          image="https://tailwindcss.com/img/card-left.jpg"
-          title="The perfect summer sweater that you can wear!"
-          category="Fashion"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-          link="#"
-        />
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default Destinations;
+export default Destinations
