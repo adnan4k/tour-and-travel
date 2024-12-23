@@ -85,6 +85,19 @@ function Navbar() {
                             </li>
                             <li>
                                 <Link
+                                    to="/packages"
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
+                                        isActive('/packages')
+                                            ? 'bg-[#56C596] text-white'
+                                            : 'text-gray-700 hover:text-[#56C596]'
+                                    }`}
+                                >
+                                    Packages
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link
                                     to="/destinations"
                                     className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
                                         isActive('/destinations')
@@ -92,7 +105,7 @@ function Navbar() {
                                             : 'text-gray-700 hover:text-[#56C596]'
                                     }`}
                                 >
-                                    Packages
+                                    Destinations
                                 </Link>
                             </li>
                             <li>

@@ -8,7 +8,7 @@ function Booking() {
                 {/* Background Image */}
                 <div className="absolute inset-0">
                     <img
-                        src="/assets/photos/contact.jpg"
+                        src="/assets/photos/tour.jpg"
                         alt="Background Image"
                         className="w-full h-full object-cover opacity-60"
                     />
