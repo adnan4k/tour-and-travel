@@ -92,7 +92,7 @@ function Values() {
             onMouseEnter={(e) => handleHover(e)}
             onMouseLeave={(e) => handleHover(e, 1, 0)}
           >
-            <div className="rounded-full border-8 border-amber-400 p-4">
+            <div className="rounded-full border-8 border-[#56C596] p-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -36,7 +36,7 @@ function Destinations() {
                     <div class="rounded overflow-hidden flex flex-col max-w-2xl mx-auto border">
                         <div class="sm:flex justify-between items-center pt-4 px-5">
                             <a href="#"
-                                class="sm:w-8/12 font-medium text-md inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
+                                class="sm:w-8/12 font-medium text-md hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
                                 Best Activewear from the Nordstrom Anniversary Sale</a>
 
                         </div>
@@ -47,7 +47,7 @@ function Destinations() {
                             </a>
 
                             <a href="#!"
-                                class="hidden absolute z-10 text-xs absolute bottom-0 right-0 bg-indigo-600 px-6 m-2 py-2 text-white hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out sm:flex items-center"><span class="text-lg">|</span>&nbsp;&nbsp;<span>Read more</span></a>
+                                class="hidden  z-10 text-xs absolute bottom-0 right-0 bg-indigo-600 px-6 m-2 py-2 text-white hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out sm:flex items-center"><span class="text-lg">|</span>&nbsp;&nbsp;<span>Read more</span></a>
 
                         </div>
 
@@ -56,7 +56,7 @@ function Destinations() {
                     <div class="rounded overflow-hidden flex flex-col max-w-2xl mx-auto border">
                         <div class="sm:flex justify-between items-center pt-4 px-5">
                             <a href="#"
-                                class="sm:w-8/12 font-medium text-md inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
+                                class="sm:w-8/12 font-medium text-md i hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
                                 Best Activewear from the Nordstrom Anniversary Sale</a>
 
                         </div>

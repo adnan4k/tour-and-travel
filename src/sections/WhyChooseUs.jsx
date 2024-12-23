@@ -66,7 +66,7 @@ function WhyChooseUs() {
               className="bg-gray-100 dark:bg-gray-800 shadow rounded-full flex items-center mt-10"
             >
               <div
-                className="bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-white rounded-full py-4 px-6"
+                className="bg-[#56C596] focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-white rounded-full py-4 px-6"
                 id="annually"
               >
                 Learn More
@@ -102,7 +102,7 @@ function WhyChooseUs() {
             role="listitem"
             className="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg mt-3 flex relative z-30 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
           >
-            <div className="w-2.5 h-auto bg-indigo-700 rounded-tl-md rounded-bl-md"></div>
+            <div className="w-2.5 h-auto bg-[#56C596] rounded-tl-md rounded-bl-md"></div>
             <div className="w-full p-8">
               <div className="md:flex items-center justify-between">
                 <h2 className="text-2xl font-semibold leading-6 text-gray-800 dark:text-white">

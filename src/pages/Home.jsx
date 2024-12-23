@@ -19,6 +19,8 @@ function Home() {
                 <WhyChooseUs />
                 {/* <Gallery /> */}
                 <Package />
+                <Gallery/>
+
                 <Subscription />
             </div>
         </div>
