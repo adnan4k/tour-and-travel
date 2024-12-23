@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos';
 import anime from 'animejs';
 import DestinationHeader from '../components/DestinationHeader';
 
-
+import axios from 'axios';
 function Destination() {
     useEffect(() => {
         // Initialize AOS
@@ -40,6 +40,21 @@ function Destination() {
             easing: "easeOutExpo",
             delay: 1000
         });
+
+
+
+    const [destinations, setDestinations] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/home-destinations')
+            .then(response => {
+                setDestinations(response.data);
+                console.log(destinations.data[0].title, 'here in this app');
+            })
+            .catch(error => {
+                console.error('There was an error fetching the destinations!', error);
+            });
+    }, []);
     return (
         <div className="">
 
@@ -50,41 +65,54 @@ function Destination() {
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
                         <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
                             <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-                                <img src="/assets/photos/danakil.jpg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                <img
+                                    src={`http://127.0.0.1:8000/storage/${destinations?.data?.[0]?.image || ''}`}
+                                    alt=""
+                                    className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                />
                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Danakil</h3>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[0]?.title}</h3>
                             </a>
                         </div>
                         <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
                             <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
-                                <img src="/assets/photos/amhara.jpg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                <img
+                                    src={`http://127.0.0.1:8000/storage/${destinations?.data?.[1]?.image || ''}`}
+                                    alt={destinations?.data?.[1]?.title} class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Amhara Region</h3>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[1]?.title}</h3>
                             </a>
                             <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
                                 <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
-                                    <img src="/assets/photos/harar.jpg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                    <img
+                                        src={`http://127.0.0.1:8000/storage/${destinations?.data?.[2]?.image || ''}`}
+
+                                        alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                     <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Harar</h3>
+                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[2]?.title}</h3>
                                 </a>
                                 <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
-                                    <img src="/assets/photos/gumuz.jpg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                    <img
+                                        src={`http://127.0.0.1:8000/storage/${destinations?.data?.[3]?.image || ''}`}
+                                        alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                     <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Gumuz</h3>
+                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[3]?.title}</h3>
                                 </a>
                             </div>
                         </div>
                         <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
                             <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-                                <img src="/assets/photos/semien.jpg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                <img
+                                    src={`http://127.0.0.1:8000/storage/${destinations?.data?.[4]?.image || ''}`}
+                                    alt={destinations?.data?.[5]?.title} class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Semien</h3>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[4]?.title}</h3>
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
         </div>
     );
 }

@@ -92,7 +92,7 @@ function Navbar() {
                                             : 'text-gray-700 hover:text-[#56C596]'
                                     }`}
                                 >
-                                    Destinations
+                                    Packages
                                 </Link>
                             </li>
                             <li>

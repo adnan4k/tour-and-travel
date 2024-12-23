@@ -8,7 +8,7 @@ import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import Booking from './pages/Booking';
-import Destinations from './pages/Destinations';
+import Packages from './pages/Packages';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
                 <Route path="/blog-detail" element={<BlogDetail />} />
                 <Route path="/contact-us" element={<Contact />} />
                 <Route path="/book" element={<Booking />} />
-                <Route path='/destinations' element={<Destinations />} />
+                <Route path='/destinations' element={<Packages />} />
 
 
                 {/* <Route path="/enjoyment" element={<EnjoymentVideo />} /> */}
