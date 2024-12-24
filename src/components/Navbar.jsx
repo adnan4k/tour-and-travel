@@ -49,7 +49,7 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-4 lg:py-1.5 ${
                                         isActive('/')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
