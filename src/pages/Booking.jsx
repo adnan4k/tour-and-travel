@@ -1,10 +1,74 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Booking() {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        members: '',
+        place: '',
+        days: '',
+        date: '',
+        time: '',
+        area: '',
+        city: '',
+        state: '',
+        postCode: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+  
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            if (response.ok) {
+                // Handle successful response
+                toast.success('Booking successful');
+                resetForm();
+            } else {
+                // Handle error response
+                toast.error('Booking failed');
+            }
+        } catch (error) {
+            toast.error('Error: ' + error.message);
+        }
+    };
+function resetForm() {
+        setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            members: '',
+            place: '',
+            days: '',
+            date: '',
+            time: '',
+            area: '',
+            city: '',
+            state: '',
+            postCode: ''
+        });
+}
     return (
-     <div>
-         <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
+        <div className='mb-10'>
+            <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
                 {/* Background Image */}
                 <div className="absolute inset-0">
                     <img
@@ -27,119 +91,136 @@ function Booking() {
                     </div>
                 </div>
             </div>
-            <div class="flex items-center justify-center p-12">
-           
-           {/* <!-- Author: FormBold Team --> */}
-           <div class="mx-auto w-full max-w-[550px] bg-white">
-               <form>
-                   <div class="mb-5">
-                       <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
-                           Full Name
-                       </label>
-                       <input type="text" name="name" id="name" placeholder="Full Name"
-                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                   </div>
-                   <div class="mb-5">
-                       <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
-                           Phone Number
-                       </label>
-                       <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
-                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                   </div>
-                   <div class="mb-5">
-                       <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
-                           Email Address
-                       </label>
-                       <input type="email" name="email" id="email" placeholder="Enter your email"
-                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                   </div>
-                   <div class="mb-5">
-                       <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
-                           Number of Members
-                       </label>
-                       <input type="text" name="members" id="phone" placeholder="Enter Number of Members"
-                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                   </div>
-                   <div class="mb-5">
-                       <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
-                           Place
-                       </label>
-                       <input type="place" name="place" id="email" placeholder="Enter Place You Want To Visit"
-                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                   </div>
-                   <div class="mb-5">
-                       <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
-                           Days
-                       </label>
-                       <input type="text" name="days" id="email" placeholder="Enter For How Many Days You Want To Visit"
-                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                   </div>
-                   <div class="-mx-3 flex flex-wrap">
-                       <div class="w-full px-3 sm:w-1/2">
-                           <div class="mb-5">
-                               <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
-                                   Date
-                               </label>
-                               <input type="date" name="date" id="date"
-                                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                           </div>
-                       </div>
-                       <div class="w-full px-3 sm:w-1/2">
-                           <div class="mb-5">
-                               <label for="time" class="mb-3 block text-base font-medium text-[#07074D]">
-                                   Time
-                               </label>
-                               <input type="time" name="time" id="time"
-                                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                           </div>
-                       </div>
-                   </div>
+            <div className="flex items-center justify-center p-12"></div>
+            <div className="mx-auto w-full max-w-[800px] bg-white">
+                <form onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="mb-5">
+                            <label htmlFor="name" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Full Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="phone" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Phone Number
+                            </label>
+                            <input
+                                type="text"
+                                name="phone"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="members" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Number of Members
+                            </label>
+                            <input
+                                type="text"
+                                name="members"
+                                id="members"
+                                placeholder="Enter Number of Members"
+                                value={formData.members}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="place" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Place
+                            </label>
+                            <input
+                                type="text"
+                                name="place"
+                                id="place"
+                                placeholder="Enter Place You Want To Visit"
+                                value={formData.place}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="days" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Days
+                            </label>
+                            <input
+                                type="text"
+                                name="days"
+                                id="days"
+                                placeholder="Enter For How Many Days You Want To Visit"
+                                value={formData.days}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="date" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Date
+                            </label>
+                            <input
+                                type="date"
+                                name="date"
+                                id="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="time" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Time
+                            </label>
+                            <input
+                                type="time"
+                                name="time"
+                                id="time"
+                                value={formData.time}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                    
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            className="hover:shadow-form w-full rounded-md bg-[#56C596] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                        >
+                            Book
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <ToastContainer />
 
-
-
-                   <div class="mb-5 pt-3">
-                       <label class="mb-5 block text-base font-semibold text-[#07074D] sm:text-xl">
-                           Address Details
-                       </label>
-                       <div class="-mx-3 flex flex-wrap">
-                           <div class="w-full px-3 sm:w-1/2">
-                               <div class="mb-5">
-                                   <input type="text" name="area" id="area" placeholder="Enter area"
-                                       class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                               </div>
-                           </div>
-                           <div class="w-full px-3 sm:w-1/2">
-                               <div class="mb-5">
-                                   <input type="text" name="city" id="city" placeholder="Enter city"
-                                       class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                               </div>
-                           </div>
-                           <div class="w-full px-3 sm:w-1/2">
-                               <div class="mb-5">
-                                   <input type="text" name="state" id="state" placeholder="Enter state"
-                                       class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                               </div>
-                           </div>
-                           <div class="w-full px-3 sm:w-1/2">
-                               <div class="mb-5">
-                                   <input type="text" name="post-code" id="post-code" placeholder="Post Code"
-                                       class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-
-                   <div>
-                       <button
-                           class="hover:shadow-form w-full rounded-md bg-[#56C596] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                           Book
-                       </button>
-                   </div>
-               </form>
-           </div>
-       </div>
-     </div>
-     )
+        </div>
+    );
 }
 
-export default Booking
+export default Booking;

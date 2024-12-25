@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { marked } from 'marked';
-import DOMPurify from 'dompurify';
+import ReactMarkdown from 'react-markdown';
 
 export default function PackageDetail() {
     const [packageDetail, setPackageDetail] = useState(null);
@@ -15,6 +14,7 @@ export default function PackageDetail() {
             try {
                 const response = await axios.get(`http://127.0.0.1:8000/api/package-detail/${id}`);
                 setPackageDetail(response.data.data);
+                console.log(response.data.data, 'API response');
             } catch (error) {
                 setError('Error fetching package details.');
                 console.error('Error fetching package details:', error);
@@ -26,13 +26,10 @@ export default function PackageDetail() {
         fetchPackageDetail();
     }, [id]);
 
-    const createMarkup = (markdown) => {
-        const html = marked(markdown || '');
-        return { __html: DOMPurify.sanitize(html) };
-    };
-
     if (loading) return <div className="text-center">Loading...</div>;
     if (error) return <div className="text-red-500">{error}</div>;
+
+    const markdownContent = packageDetail?.content?.replace(/\\n/g, '\n'); // Fix escaped newlines if needed
 
     return (
         <div>
@@ -50,10 +47,9 @@ export default function PackageDetail() {
                     <div className="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
                         <div className="bg-white relative top-0 -mt-32 p-5 sm:p-10">
                             <h1 className="text-gray-900 font-bold text-3xl mb-2">{packageDetail?.title}</h1>
-                            <div
-                                dangerouslySetInnerHTML={createMarkup(packageDetail?.content)}
-                                className="prose"
-                            />
+
+                            {/* Render Markdown Content */}
+                            <ReactMarkdown>{markdownContent}</ReactMarkdown>
                         </div>
                     </div>
                 </div>

@@ -46,14 +46,14 @@ function Values() {
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
       <h2 className="font-headline text-2xl font-semibold sm:text-3xl py-5 text-center">
-        What We Offer To Our Client
+        Our Values
       </h2>
       <div className="container mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between">
         {/** Individual Service Items */}
         {[
           {
-            title: "Safe",
-            description: "Our products are secure and private out-of-the-box",
+            title: "Community Empowerment",
+            description: "We collaborate with local businesses, artisans, and guides to ensure that tourism generates lasting positive change in the areas we operate.",
             svgPath: (
               <path
                 strokeLinecap="round"
@@ -63,8 +63,8 @@ function Values() {
             ),
           },
           {
-            title: "Efficient",
-            description: "Feel good about your wallet and the environment",
+            title: "Integrity",
+            description: "Transparency, honesty, and accountability form the core of our operations. We adhere to high ethical standards in every aspect of our service, ensuring trust and satisfaction for our clients, partners, and stakeholders",
             svgPath: (
               <path
                 strokeLinecap="round"
@@ -74,8 +74,8 @@ function Values() {
             ),
           },
           {
-            title: "Proven",
-            description: "Leading the Smart Home world for 10 years",
+            title: "Authenticity",
+            description: "At Jemma Valley Ethiopia Tours, we prioritize genuine, culturally-rich travel experiences that allow our guests to engage with Ethiopia’s true essence",
             svgPath: (
               <path
                 strokeLinecap="round"

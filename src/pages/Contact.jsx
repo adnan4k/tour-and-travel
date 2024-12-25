@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { toast ,ToastContainer} from 'react-toastify';
 
 function Contact() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -30,6 +31,52 @@ function Contact() {
             answer: "Yes, you can cancel your subscription at any time without any hidden fees. We believe in providing a hassle-free experience for our users."
         }
     ];
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+    const [responseMessage, setResponseMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setResponseMessage('');
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/contacts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                toast.success('Message sent successfully!');
+
+                setResponseMessage('Message sent successfully!');
+
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                const errorData = await response.json();
+                setResponseMessage(`Error: ${errorData.message}`);
+                toast.error(`Error: ${errorData.message}`);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setResponseMessage('An error occurred. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     return (
         <div>
             <div class="bg-white">
@@ -69,7 +116,7 @@ function Contact() {
                         </div>
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Email Us</h3>
-                            <p class="text-gray-700 mt-2">emmavalleyethiopiatours@gmail.com <br/>
+                            <p class="text-gray-700 mt-2">emmavalleyethiopiatours@gmail.com <br />
                                 jemmavalleytours@gmail.com
                             </p>
                         </div>
@@ -80,82 +127,136 @@ function Contact() {
                     </div>
                 </section>
                 <div className='grid lg:grid-cols-2 sm:grid-cols-1 mx-10 gap-x-10 my-10'>
-                <section class="bg-gray-100 py-12 px-4">
-                    <h2 class="text-2xl font-bold text-center">Send Us A Message</h2>
-                    <form class="max-w-2xl mx-auto mt-8 space-y-8">
-                        <div>
-                            <label htmlFor="name" class="block text-gray-700 font-bold">Name</label>
-                            <input type="text" id="name" class="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
-                        </div>
-                        <div>
-                            <label htmlFor="email" class="block text-gray-700 font-bold">Email</label>
-                            <input type="email" id="email" class="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
-                        </div>
-                        <div>
-                            <label htmlFor="message" class="block text-gray-700 font-bold">Message</label>
-                            <textarea id="message" rows="5" class="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-green-700 text-white py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors">Send Message</button>
-                    </form>
-                </section>
-
-                <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
-                    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-                        <div className="max-w-2xl mx-auto text-center">
-                            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-                                Explore Common Questions
-                            </h2>
-                        </div>
-                        <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
-                            {faqs.map((faq, index) => (
-                                <div
-                                    key={index}
-                                    className="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50"
+                    <section className="bg-gray-100 py-12 px-4">
+                        <h2 className="text-2xl font-bold text-center">Send Us A Message</h2>
+                        <form
+                            onSubmit={handleSubmit}
+                            className="max-w-2xl mx-auto mt-8 space-y-8"
+                        >
+                            <div>
+                                <label
+                                    htmlFor="name"
+                                    className="block text-gray-700 font-bold"
                                 >
-                                    <button
-                                        type="button"
-                                        className="flex items-center justify-between w-full px-4 py-5 sm:p-6"
-                                        onClick={() => handleToggle(index)}
+                                    Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    htmlFor="email"
+                                    className="block text-gray-700 font-bold"
+                                >
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    htmlFor="message"
+                                    className="block text-gray-700 font-bold"
+                                >
+                                    Message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full mt-2 p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+                                ></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full bg-green-700 text-white py-3 rounded-lg shadow-lg hover:bg-green-600 transition-colors"
+                            >
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                            </button>
+                        </form>
+                        {responseMessage && (
+                            <p className="text-center mt-4 font-bold text-green-700">
+                                {responseMessage}
+                            </p>
+                        )}
+                    </section>
+
+                    <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+                        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                            <div className="max-w-2xl mx-auto text-center">
+                                <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                                    Explore Common Questions
+                                </h2>
+                            </div>
+                            <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+                                {faqs.map((faq, index) => (
+                                    <div
+                                        key={index}
+                                        className="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50"
                                     >
-                                        <span className="flex text-lg font-semibold text-black">{faq.question}</span>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            className={`w-6 h-6 text-gray-400 transform transition-transform ${openIndex === index ? 'rotate-180' : ''
-                                                }`}
+                                        <button
+                                            type="button"
+                                            className="flex items-center justify-between w-full px-4 py-5 sm:p-6"
+                                            onClick={() => handleToggle(index)}
                                         >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M19 9l-7 7-7-7"
-                                            ></path>
-                                        </svg>
-                                    </button>
-                                    {openIndex === index && (
-                                        <div className="px-4 pb-5 sm:px-6 sm:pb-6">
-                                            <p>{faq.answer}</p>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
+                                            <span className="flex text-lg font-semibold text-black">{faq.question}</span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                                className={`w-6 h-6 text-gray-400 transform transition-transform ${openIndex === index ? 'rotate-180' : ''
+                                                    }`}
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth="2"
+                                                    d="M19 9l-7 7-7-7"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                        {openIndex === index && (
+                                            <div className="px-4 pb-5 sm:px-6 sm:pb-6">
+                                                <p>{faq.answer}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                            <p className="text-center text-gray-600 text-base mt-9">
+                                Still have questions?
+                                <span className="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">
+                                    Contact our support
+                                </span>
+                            </p>
                         </div>
-                        <p className="text-center text-gray-600 text-base mt-9">
-                            Still have questions?
-                            <span className="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">
-                                Contact our support
-                            </span>
-                        </p>
-                    </div>
-                </section>
+                    </section>
                 </div>
-              
+
 
 
 
             </div>
+            <ToastContainer />
         </div>
     )
 }
