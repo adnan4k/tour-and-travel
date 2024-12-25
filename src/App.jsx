@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Booking from './pages/Booking';
 import Packages from './pages/Packages';
 import Destinations from './pages/Destinations';
+import PackageDetial from './pages/PackageDetial';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
                 <Route path="/book" element={<Booking />} />
                 <Route path='/packages' element={<Packages />} />
                 <Route path='/destinations' element={<Destinations />} />
+                <Route path ='/package-detail/:id' element={<PackageDetial />} />
+                <Route path='/blog-detail/:id' element={<BlogDetail />} />
 
 
                 {/* <Route path="/enjoyment" element={<EnjoymentVideo />} /> */}

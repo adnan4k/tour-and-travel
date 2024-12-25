@@ -67,7 +67,7 @@ function Packages() {
                                 <p className="text-gray-600 mb-4">{pkg.description}</p>
 
                                 <div className="mt-2 flex justify-between items-center">
-                                    <Link to='/'
+                                    <Link to={`/package-detail/${pkg.id}`}
                                         className="hidden z-10 text-xs absolute bottom-0 right-0 bg-indigo-600 px-6 m-2 py-2 text-white hover:bg-[#56C596] hover:text-white transition duration-500 ease-in-out sm:flex items-center">
                                         <span className="text-lg">|</span>&nbsp;&nbsp;<span>Read more</span>
                                     </Link>

@@ -62,11 +62,16 @@ function Contact() {
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 animate-fadeIn">
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Call Us</h3>
-                            <p class="text-gray-700 mt-2">+1 123 456 7890</p>
+                            <p class="text-gray-700 mt-2"> +251912960059                            </p>
+                            <p class="text-gray-700 mt-2"> +251983038998                          </p>
+
+
                         </div>
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Email Us</h3>
-                            <p class="text-gray-700 mt-2">contact@wisedoctors.com</p>
+                            <p class="text-gray-700 mt-2">emmavalleyethiopiatours@gmail.com <br/>
+                                jemmavalleytours@gmail.com
+                            </p>
                         </div>
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Visit Us</h3>
@@ -74,6 +79,7 @@ function Contact() {
                         </div>
                     </div>
                 </section>
+                <div className='grid lg:grid-cols-2 sm:grid-cols-1 mx-10 gap-x-10 my-10'>
                 <section class="bg-gray-100 py-12 px-4">
                     <h2 class="text-2xl font-bold text-center">Send Us A Message</h2>
                     <form class="max-w-2xl mx-auto mt-8 space-y-8">
@@ -144,6 +150,9 @@ function Contact() {
                         </p>
                     </div>
                 </section>
+                </div>
+              
+
 
 
             </div>

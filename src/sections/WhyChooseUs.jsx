@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import anime from 'animejs';
+import { Link } from 'react-router-dom';
 
 function WhyChooseUs() {
   useEffect(() => {
@@ -61,8 +62,7 @@ function WhyChooseUs() {
            Jemma Valley Ethiopia Tours envisions becoming a leading provider of immersive and transformative travel experiences, showcasing Ethiopia's rich cultural heritage, diverse landscapes, and historical significance.
           </p>
           <div className="w-56">
-            <button
-              onClick={() => console.log('Learn More clicked')}
+            <Link to='/about'
               className="bg-gray-100 dark:bg-gray-800 shadow rounded-full flex items-center mt-10"
             >
               <div
@@ -71,7 +71,7 @@ function WhyChooseUs() {
               >
                 Learn More
               </div>
-            </button>
+            </Link>
           </div>
         </div>
         <div

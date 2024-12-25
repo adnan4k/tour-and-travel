@@ -30,18 +30,18 @@ function Package({ packages }) {
                             <p className="text-gray-600 mb-4">{pkg.description}</p>
 
                             <div className="flex justify-between items-center">
-                                <button className="px-7 py-2 bg-[#56C596] text-white font-semibold rounded-2xl shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out">
+                                <Link to='book' className="px-7 py-2 bg-[#56C596] text-white font-semibold rounded-2xl shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out">
                                     Book Now
-                                </button>
-                                <button className="px-7 py-2 bg-indigo-500 text-white font-semibold rounded-2xl shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out">
+                                </Link>
+                                <Link to={`/package-detail/${pkg.id}`} className="px-7 py-2 bg-indigo-500 text-white font-semibold rounded-2xl shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-300 ease-in-out">
                                     Detail
-                                </button>
+                                </Link>
                             </div>
 
                         </div>
                     </div>
                 ))}
-                <Link to='/destinations' class=" lg:-my-20 text-[#56C596] border border-[#56C596] py-2 px-6 gap-2 rounded inline-flex items-center">
+                <Link to='/packages' class=" lg:-my-20 text-[#56C596] border border-[#56C596] py-2 px-6 gap-2 rounded inline-flex items-center">
                     <span>
                         View More
                     </span>

@@ -11,7 +11,6 @@ const Blog = () => {
       .then(data => setCardData(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
- console.log(cardData,'here is card data')
   return (
     <div>
       <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
@@ -45,15 +44,15 @@ const Blog = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
           {cardData.map((card) => (
             <div key={card?.id} className="rounded overflow-hidden shadow-lg">
-              <div className="relative">
-                <a href="#">
+              <Link to={`/blog-detail/${card.id}`} className="relative">
+                <Link to={`/blog-detail/${card.id}`} >
                   <img
                     className="w-full max-w-[400px] max-h-[250px]"
                     src={`http://127.0.0.1:8000/storage/${card?.image || ''}`}
                     alt={card.title}
                   />
                   <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
-                </a>
+                </Link>
                 <a href="#!">
                   <div className="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
                     By {card.author}
@@ -65,7 +64,7 @@ const Blog = () => {
                     <small>{new Date(card?.created_at).getFullYear()}</small>
                   </div>
                 </a>
-              </div>
+              </Link>
               <div className="px-6 py-4">
                 <a href="#" className="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">
                   {card.title}

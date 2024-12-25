@@ -24,19 +24,19 @@ function AboutHero() {
             id: 1,
             title: 'Welcome to Adventure',
             subtitle: 'Explore breathtaking destinations around the globe with our curated travel packages.',
-            background: '/assets/images/ah1.jpg',
+            background: '/assets/photos/beautifullmaintain.jpg',
         },
         {
             id: 2,
             title: 'Popular Destinations',
             subtitle: 'Discover the most sought-after travel spots, from exotic beaches to vibrant cities.',
-            background: '/assets/images/ah2.jpg',
+            background: '/assets/photos/zebras.jpg',
         },
         {
             id: 3,
             title: 'Why Travel With Us?',
             subtitle: 'Affordable packages, expert guides, and 24/7 support ensure your journey is seamless and memorable.',
-            background: '/assets/images/ah3.jpg',
+            background: '/assets/photos/rainbow.jpg',
         },
         
     ];

@@ -1,34 +1,56 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 function BlogDetail() {
+    const [blogDetail, setBlogDetail] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const { id } = useParams();
+
+    useEffect(() => {
+        const fetchblogDetail = async () => {
+            try {
+                const response = await axios.get(`http://127.0.0.1:8000/api/blog-detail/${id}`);
+                setBlogDetail(response.data.data);
+            } catch (error) {
+                setError('Error fetching package details.');
+                console.error('Error fetching package details:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchblogDetail();
+    }, [id]);
+
+
+
+    if (loading) return <div className="text-center">Loading...</div>;
+    if (error) return <div className="text-red-500">{error}</div>;
     return (
         <div>
-            {/* <!-- Blog post with featured image --> */}
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl mx-auto">
-                    {/* <!-- Blog post header --> */}
-                    <div class="py-8">
-                        <h1 class="text-3xl font-bold mb-2">Blog post title</h1>
-                        <p class="text-gray-500 text-sm">Published on <time datetime="2022-04-05">April 5, 2022</time></p>
+        <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
+            <div
+                className="bg-cover bg-center text-center overflow-hidden"
+                style={{
+                    minHeight: '500px',
+                    backgroundImage: `url('http://127.0.0.1:8000/storage/${blogDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
+                }}
+                title={blogDetail?.title || 'Package Image'}
+            ></div>
+
+            <div className="max-w-3xl mx-auto">
+                <div className="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+                    <div className="bg-white relative top-0 -mt-32 p-5 sm:p-10">
+                        <h1 className="text-gray-900 font-bold text-3xl mb-2">{blogDetail?.title}</h1>
+                       
+                        <p>{blogDetail?.content}</p>
                     </div>
-
-                    {/* <!-- Featured image --> */}
-                    <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c" alt="Featured image" class="w-full h-auto mb-8"/>
-
-                        {/* <!-- Blog post content --> */}
-                        <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius fringilla augue, vel vestibulum
-                                nisl mattis vel. Praesent porttitor pharetra purus eu tincidunt.</p>
-                            <p>Nullam vitae sapien non est suscipit blandit quis sit amet ipsum. Aliquam euismod accumsan nunc, in
-                                convallis felis luctus in. Sed rhoncus metus a elit rutrum aliquam.</p>
-                            <p>Integer ullamcorper leo nulla, nec commodo metus vehicula eget. Duis vel vestibulum tellus, eget mattis
-                                quam. Nullam euismod libero sed nibh tristique, vel eleifend risus sagittis. In hac habitasse platea
-                                dictumst. Sed dapibus magna at arcu euismod, a pulvinar turpis tristique. Suspendisse imperdiet velit
-                                nec lectus rutrum varius.</p>
-                        </div>
                 </div>
             </div>
         </div>
+    </div>
     )
 }
 

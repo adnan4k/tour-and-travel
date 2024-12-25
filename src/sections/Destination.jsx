@@ -50,7 +50,6 @@ function Destination() {
         axios.get('http://127.0.0.1:8000/api/home-destinations')
             .then(response => {
                 setDestinations(response.data);
-                console.log(destinations.data[0].title, 'here in this app');
             })
             .catch(error => {
                 console.error('There was an error fetching the destinations!', error);
