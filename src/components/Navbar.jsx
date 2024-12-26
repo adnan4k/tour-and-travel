@@ -12,8 +12,7 @@ function Navbar() {
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <Link to='/' className="flex items-center">
                     <img src="assets/images/logo.jpg" className="h-6  w-9 rounded-full mr-3 sm:h-9" alt="Landwind Logo" />
-                    <span className="self-center max-w-xl text-xl font-semibold  dark:text-white">Jemma Valley
-                        Ethiopia</span>
+                    <span className="self-center max-w-xl text-xl font-semibold  dark:text-white">Jemma Valley</span>
                 </Link>
                 <div className="flex items-center lg:order-2">
                     <div className="hidden mt-2 mr-4 sm:inline-block">
