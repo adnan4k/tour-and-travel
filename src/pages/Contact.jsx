@@ -15,20 +15,20 @@ function Contact() {
     // Data for questions and answers
     const faqs = [
         {
-            question: "How can I get started?",
-            answer: "Getting started is easy! Sign up for an account, and you'll have access to our platform's features. No credit card required for the initial signup."
+            question: "How can I book a tour?",
+            answer: "Booking a tour is simple! Just visit our website, choose your desired tour package, and follow the booking instructions. You can also contact us directly for assistance."
         },
         {
-            question: "What is the pricing structure?",
-            answer: "Our pricing structure is flexible. We offer both free and paid plans. You can choose the one that suits your needs and budget."
+            question: "What is included in the tour packages?",
+            answer: "Our tour packages typically include accommodation, transportation, guided tours, and some meals. Specific inclusions may vary by package, so please check the details for each tour."
         },
         {
-            question: "What kind of support do you provide?",
-            answer: "We offer comprehensive customer support. You can reach out to our support team through various channels, including email, chat, and a knowledge base."
+            question: "Do you offer customized tours?",
+            answer: "Yes, we offer customized tours tailored to your preferences. Contact us with your requirements, and we'll create a personalized itinerary just for you."
         },
         {
-            question: "Can I cancel my subscription anytime?",
-            answer: "Yes, you can cancel your subscription at any time without any hidden fees. We believe in providing a hassle-free experience for our users."
+            question: "What is your cancellation policy?",
+            answer: "Our cancellation policy varies depending on the tour package. Generally, you can cancel up to a certain number of days before the tour date for a full or partial refund. Please refer to the specific tour details for more information."
         }
     ];
 
@@ -122,7 +122,7 @@ function Contact() {
                         </div>
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Visit Us</h3>
-                            <p class="text-gray-700 mt-2">123 Health St, Wellness City</p>
+                            <p class="text-gray-700 mt-2">Addis Ababa,Ethiopia</p>
                         </div>
                     </div>
                 </section>
