@@ -17,7 +17,7 @@ const TestimonialSlider = () => {
     useEffect(() => {
         const fetchTestimonials = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/testimonials");
+                const response = await axios.get("https://tour-dashboard.hakimethio.et/api/testimonials");
                 console.log(response.data.data, 'ddaaatttaa');
                 setTestimonials(response.data.data);
             } catch (error) {
@@ -105,7 +105,7 @@ const TestimonialSlider = () => {
                                             <div class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-6 transition-all duration-500 hover:border-indigo-600">
                                                 <div class="flex items-center gap-5 mb-5 sm:mb-9">
                                                     <img class="rounded-full max-w-36 object-cover"
-                                                        src={`http://127.0.0.1:8000/storage/${item?.image || ''}`}
+                                                        src={`https://tour-dashboard.hakimethio.et/storage/${item?.image || ''}`}
                                                         alt="avatar" />
                                                     <div class="grid gap-1">
                                                         <h5 class="text-gray-900 font-medium transition-all duration-500  ">{item.name}</h5>
