@@ -5,7 +5,7 @@ function Footer() {
     return (
         <div>
             <footer class="text-white px-8 py-6 bg-gray-800">
-                <div class="container max-w-[800px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="container max-w-[900px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div class="mb-8 md:mb-0">
                         <h3 class="text-lg font-bold mb-4">Address</h3>
                         <p class="mb-2">Addis Ababa, Ethiopia</p>
@@ -19,6 +19,15 @@ function Footer() {
                             <li><Link to='blogs' class="hover:text-yellow-400">Blog</Link></li>
                             <li><Link to='packages' class="hover:text-yellow-400">Packages</Link></li>
                             <li><Link to='destinations' class="hover:text-yellow-400">Destinations</Link></li>
+                        </ul>
+                    </div>
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="text-lg font-bold mb-4">Socials</h3>
+                        <ul>
+                            <li><a href='https://www.facebook.com/profile.php?id=61571236943896&mibextid=JRoKGi' class="hover:text-yellow-400">Facebook</a></li>
+                            <li><a href='https://www.instagram.com/jemmavalleytours/profilecard/?igsh=MXAzMzFtOTZmNjV6aA==' to='about' class="hover:text-yellow-400">Instagram</a></li>
+                            <li><a href='https://wa.me/message/KTEEXWJN4BMDA1' class="hover:text-yellow-400">WhatsApp</a></li>
+
                         </ul>
                     </div>
                     <div>
