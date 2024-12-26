@@ -10,10 +10,11 @@ function Navbar() {
     return (
         <nav className="bg-white border-gray-200 py-5 dark:bg-gray-900">
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-                <a className="flex items-center">
-                    <img src="https://www.svgrepo.com/show/499962/music.svg" className="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
-                    <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Landwind</span>
-                </a>
+                <Link to='/' className="flex items-center">
+                    <img src="assets/images/logo.jpg" className="h-6  w-9 rounded-full mr-3 sm:h-9" alt="Landwind Logo" />
+                    <span className="self-center max-w-xl text-xl font-semibold  dark:text-white">Jemma Valley
+                        Ethiopia</span>
+                </Link>
                 <div className="flex items-center lg:order-2">
                     <div className="hidden mt-2 mr-4 sm:inline-block">
                         <span></span>
@@ -49,11 +50,10 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-4 lg:py-1.5 ${
-                                        isActive('/')
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-4 lg:py-1.5 ${isActive('/')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
-                                    }`}
+                                        }`}
                                     aria-current="page"
                                 >
                                     Home
@@ -62,11 +62,10 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/about"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
-                                        isActive('/about')
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/about')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
-                                    }`}
+                                        }`}
                                 >
                                     About
                                 </Link>
@@ -74,11 +73,10 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/blogs"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
-                                        isActive('/blogs')
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/blogs')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
-                                    }`}
+                                        }`}
                                 >
                                     Blogs
                                 </Link>
@@ -86,11 +84,10 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/packages"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
-                                        isActive('/packages')
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/packages')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
-                                    }`}
+                                        }`}
                                 >
                                     Packages
                                 </Link>
@@ -99,11 +96,10 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/destinations"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
-                                        isActive('/destinations')
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/destinations')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
-                                    }`}
+                                        }`}
                                 >
                                     Destinations
                                 </Link>
@@ -111,11 +107,10 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/book"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
-                                        isActive('/book')
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/book')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
-                                    }`}
+                                        }`}
                                 >
                                     Book
                                 </Link>
@@ -123,11 +118,10 @@ function Navbar() {
                             <li>
                                 <Link
                                     to="/contact-us"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${
-                                        isActive('/contact-us')
+                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/contact-us')
                                             ? 'bg-[#56C596] text-white'
                                             : 'text-gray-700 hover:text-[#56C596]'
-                                    }`}
+                                        }`}
                                 >
                                     Contact
                                 </Link>
