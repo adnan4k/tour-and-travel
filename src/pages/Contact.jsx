@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { toast ,ToastContainer} from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 function Contact() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -122,7 +122,11 @@ function Contact() {
                         </div>
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Visit Us</h3>
-                            <p class="text-gray-700 mt-2">Addis Ababa,Ethiopia</p>
+                            <p class="text-gray-700 mt-2">
+                                NV Business Center
+                                8th floor
+                                Mickey Leland St,
+                                Addis Ababa,Ethiopia</p>
                         </div>
                     </div>
                 </section>

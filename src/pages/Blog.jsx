@@ -11,6 +11,25 @@ const Blog = () => {
       .then(data => setCardData(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
+
+  const formatRelativeTime = (dateString) => {
+    const createdAt = new Date(dateString);
+    const now = new Date();
+    const diffInMs = now - createdAt;
+    const diffInMinutes = Math.floor(diffInMs / (1000 * 60));
+
+    if (diffInMinutes < 1) {
+        return "Just now";
+    } else if (diffInMinutes < 60) {
+        return `${diffInMinutes} minute${diffInMinutes > 1 ? "s" : ""} ago`;
+    } else if (diffInMinutes < 1440) {
+        const hours = Math.floor(diffInMinutes / 60);
+        return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+    } else {
+        const days = Math.floor(diffInMinutes / 1440);
+        return `${days} day${days > 1 ? "s" : ""} ago`;
+    }
+};
   return (
     <div>
       <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
@@ -53,17 +72,8 @@ const Blog = () => {
                   />
                   <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
                 </Link>
-                <a href="#!">
-                  <div className="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                    By {card.author}
-                  </div>
-                </a>
-                <a href="!#">
-                  <div className="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                    <small className="font-normal">{new Date(card?.created_at).toLocaleString('default', { month: 'long' })}</small>
-                    <small>{new Date(card?.created_at).getFullYear()}</small>
-                  </div>
-                </a>
+               
+               
               </Link>
               <div className="px-6 py-4">
                 <a href="#" className="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">
@@ -81,7 +91,7 @@ const Blog = () => {
                   <span className="ml-1">{new Date(card.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                 </span>
                 <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
-                  <span className="ml-1">{Math.floor((new Date() - new Date(card.created_at)) / 60000)} minutes ago</span>
+                <span className="ml-1">{formatRelativeTime(card.created_at)}</span>
                 </span>
               </div>
             </div>

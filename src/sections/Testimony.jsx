@@ -34,8 +34,8 @@ const TestimonialSlider = () => {
                 <div
                     class="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
                     <div class="w-full lg:w-2/5">
-                        <h2 class="text-4xl font-bold text-gray-900 leading-[3.25rem] mb-8">Customers gave their <span
-                            class=" text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-violet-600">Feedback</span>
+                        <h2 class="text-4xl font-bold text-gray-900 leading-[3.25rem] mb-8">Customers  <span
+                            class=" text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-violet-600">Testimonials</span>
                         </h2>
                         {/* <!-- Slider controls --> */}
                         <div class="flex items-center justify-center lg:justify-start gap-10">

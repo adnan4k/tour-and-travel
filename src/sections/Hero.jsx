@@ -12,7 +12,7 @@ function Hero() {
             description:
                 "Experience the wonders of Ethiopia, from cascading waterfalls and dense forests to charming traditional houses.",
             gradient: "from-purple-600 to-blue-600",
-            image: "/assets/photos/houses.jpg",
+            image: "/assets/photos/holka.jpg",
         },
         {
             id: 2,
@@ -27,7 +27,7 @@ function Hero() {
             description:
                 "Uncover the beauty of Ethiopia — towering waterfalls, lush green landscapes, and timeless traditions.",
             gradient: "from-green-600 to-blue-600",
-            image: "/assets/photos/waterfall.jpg",
+            image: "/assets/photos/lalibela.jpg",
         },
         {
             id: 4,

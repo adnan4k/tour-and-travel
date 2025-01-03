@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(false);
     const location = useLocation();
 
     // Track the window width for responsive behavior
@@ -28,7 +28,7 @@ function Navbar() {
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <Link to="/" className="flex items-center">
                     <img
-                        src="assets/images/logo.jpg"
+                        src="assets/photos/jemma-logo.png"
                         className="h-6 w-9 rounded-full mr-3 sm:h-9"
                         alt="Landwind Logo"
                     />

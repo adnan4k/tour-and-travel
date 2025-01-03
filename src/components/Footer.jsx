@@ -43,7 +43,7 @@ function Footer() {
                     </div>
                     <div class="mb-8 md:mb-0 w-full">
                         <h3 class="text-lg font-bold mb-4">Address</h3>
-                        <p class="mb-2">Addis Ababa, Ethiopia</p>
+                        <p class="mb-2">NV Business Center 8th floor Mickey Leland St, Addis Ababa,Ethiopia</p>
                     </div>
 
                 </div>

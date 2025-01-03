@@ -11,13 +11,19 @@ import Booking from './pages/Booking';
 import Packages from './pages/Packages';
 import Destinations from './pages/Destinations';
 import PackageDetial from './pages/PackageDetial';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+
 
 
 function App() {
     return (
         <Router>
-          <Navbar />
+            <Navbar />
+            <TawkMessengerReact
+                propertyId="6776e68849e2fd8dfe01c7b8"
+                widgetId="1igk791gc" />
             <Routes>
+
                 {/* Define Routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
@@ -27,7 +33,7 @@ function App() {
                 <Route path="/book" element={<Booking />} />
                 <Route path='/packages' element={<Packages />} />
                 <Route path='/destinations' element={<Destinations />} />
-                <Route path ='/package-detail/:id' element={<PackageDetial />} />
+                <Route path='/package-detail/:id' element={<PackageDetial />} />
                 <Route path='/blog-detail/:id' element={<BlogDetail />} />
 
 
@@ -35,7 +41,7 @@ function App() {
                 {/* Catch-All Route for 404 */}
                 {/* <Route path="*" element={<NotFound />} /> */}
             </Routes>
-            <Footer/>
+            <Footer />
         </Router>
     );
 }
