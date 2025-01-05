@@ -16,7 +16,7 @@ function Package({ packages }) {
                         <div className="relative">
                             <img
                                 className="w-full h-64 object-cover"
-                                src={`https://tour-dashboard.hakimethio.et/storage/${pkg?.image || ''}`}
+                                src={`http://127.0.0.1:8000/storage/${pkg?.image || ''}`}
                                 alt={pkg.title}
                             />
                             {pkg.featured && (
@@ -26,6 +26,12 @@ function Package({ packages }) {
                             )}
                         </div>
                         <div className="p-6">
+                            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm max-w-md mx-auto">
+                                <p className="text-blue-600 font-semibold text-sm italic">
+                                    Tour Code: <span className="text-blue-800 font-bold">{pkg.code}</span>
+                                </p>
+                            </div>
+
                             <h2 className="text-2xl font-bold mb-2 text-gray-800">{pkg.title}</h2>
                             <p className="text-gray-600 mb-4">{pkg.description}</p>
 
@@ -65,7 +71,7 @@ export default function App() {
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        axios.get('https://tour-dashboard.hakimethio.et/api/home-packages')
+        axios.get('http://127.0.0.1:8000/api/home-packages')
             .then(response => {
                 console.log(response.data.data, 'here in this app');
                 setPackages(response.data.data);

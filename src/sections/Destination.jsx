@@ -47,7 +47,7 @@ function Destination() {
     const [destinations, setDestinations] = useState([]);
 
     useEffect(() => {
-        axios.get('https://tour-dashboard.hakimethio.et/api/home-destinations')
+        axios.get('http://127.0.0.1:8000/api/home-destinations')
             .then(response => {
                 setDestinations(response.data);
             })
@@ -66,7 +66,7 @@ function Destination() {
                         <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
                             <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
                                 <img
-                                    src={`https://tour-dashboard.hakimethio.et/storage/${destinations?.data?.[0]?.image || ''}`}
+                                    src={`http://127.0.0.1:8000/storage/${destinations?.data?.[0]?.image || ''}`}
                                     alt=""
                                     className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                 />
@@ -77,7 +77,7 @@ function Destination() {
                         <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
                             <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
                                 <img
-                                    src={`https://tour-dashboard.hakimethio.et/storage/${destinations?.data?.[1]?.image || ''}`}
+                                    src={`http://127.0.0.1:8000/storage/${destinations?.data?.[1]?.image || ''}`}
                                     alt={destinations?.data?.[1]?.title} class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                 <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[1]?.title}</h3>
@@ -85,7 +85,7 @@ function Destination() {
                             <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
                                 <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
                                     <img
-                                        src={`https://tour-dashboard.hakimethio.et/storage/${destinations?.data?.[2]?.image || ''}`}
+                                        src={`http://127.0.0.1:8000/storage/${destinations?.data?.[2]?.image || ''}`}
 
                                         alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                     <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
@@ -93,7 +93,7 @@ function Destination() {
                                 </a>
                                 <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
                                     <img
-                                        src={`https://tour-dashboard.hakimethio.et/storage/${destinations?.data?.[3]?.image || ''}`}
+                                        src={`http://127.0.0.1:8000/storage/${destinations?.data?.[3]?.image || ''}`}
                                         alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                     <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                     <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[3]?.title}</h3>
@@ -103,7 +103,7 @@ function Destination() {
                         <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
                             <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
                                 <img
-                                    src={`https://tour-dashboard.hakimethio.et/storage/${destinations?.data?.[4]?.image || ''}`}
+                                    src={`http://127.0.0.1:8000/storage/${destinations?.data?.[4]?.image || ''}`}
                                     alt={destinations?.data?.[5]?.title} class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                 <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">{destinations?.data?.[4]?.title}</h3>

@@ -6,7 +6,7 @@ const Blog = () => {
   const [cardData, setCardData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch('https://tour-dashboard.hakimethio.et/api/blogs')
+    fetch('http://127.0.0.1:8000/api/blogs')
       .then(response => response.json())
       .then(data => setCardData(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -67,7 +67,7 @@ const Blog = () => {
                 <Link to={`/blog-detail/${card.id}`} >
                   <img
                     className="w-full max-w-[400px] max-h-[250px]"
-                    src={`https://tour-dashboard.hakimethio.et/storage/${card?.image || ''}`}
+                    src={`http://127.0.0.1:8000/storage/${card?.image || ''}`}
                     alt={card.title}
                   />
                   <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>

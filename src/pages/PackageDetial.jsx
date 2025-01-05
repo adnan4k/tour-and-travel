@@ -12,7 +12,7 @@ export default function PackageDetail() {
     useEffect(() => {
         const fetchPackageDetail = async () => {
             try {
-                const response = await axios.get(`https://tour-dashboard.hakimethio.et/api/package-detail/${id}`);
+                const response = await axios.get(`http://127.0.0.1:8000/api/package-detail/${id}`);
                 setPackageDetail(response.data.data);
                 console.log(response.data.data, 'API response');
             } catch (error) {
@@ -38,11 +38,11 @@ export default function PackageDetail() {
                     className="bg-cover bg-center text-center overflow-hidden"
                     style={{
                         minHeight: '500px',
-                        backgroundImage: `url('https://tour-dashboard.hakimethio.et/storage/${packageDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
+                        backgroundImage: `url('http://127.0.0.1:8000/storage/${packageDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
                     }}
                     title={packageDetail?.title || 'Package Image'}
                 ></div>
-
+               
                 <div className="max-w-3xl mx-auto">
                     <div className="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
                         <div className="bg-white relative top-0 -mt-32 p-5 sm:p-10">
@@ -52,6 +52,11 @@ export default function PackageDetail() {
                             <ReactMarkdown>{markdownContent}</ReactMarkdown>
                         </div>
                     </div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm max-w-md mx-auto">
+                    <p className="text-blue-600 font-semibold text-sm italic">
+                        Tour Code: <span className="text-blue-800 font-bold">{packageDetail.code}</span>
+                    </p>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ function BlogDetail() {
     useEffect(() => {
         const fetchblogDetail = async () => {
             try {
-                const response = await axios.get(`https://tour-dashboard.hakimethio.et/api/blog-detail/${id}`);
+                const response = await axios.get(`http://127.0.0.1:8000/api/blog-detail/${id}`);
                 setBlogDetail(response.data.data);
             } catch (error) {
                 setError('Error fetching package details.');
@@ -35,7 +35,7 @@ function BlogDetail() {
                 className="bg-cover bg-center text-center overflow-hidden"
                 style={{
                     minHeight: '500px',
-                    backgroundImage: `url('https://tour-dashboard.hakimethio.et/storage/${blogDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
+                    backgroundImage: `url('http://127.0.0.1:8000/storage/${blogDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
                 }}
                 title={blogDetail?.title || 'Package Image'}
             ></div>
