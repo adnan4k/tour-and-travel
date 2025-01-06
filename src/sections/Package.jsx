@@ -16,7 +16,7 @@ function Package({ packages }) {
                         <div className="relative">
                             <img
                                 className="w-full h-64 object-cover"
-                                src={`http://127.0.0.1:8000/storage/${pkg?.image || ''}`}
+                                src={`https://tour-dashboard.hakimethio.et/storage/${pkg?.image || ''}`}
                                 alt={pkg.title}
                             />
                             {pkg.featured && (
@@ -71,7 +71,7 @@ export default function App() {
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/home-packages')
+        axios.get('https://tour-dashboard.hakimethio.et/api/home-packages')
             .then(response => {
                 console.log(response.data.data, 'here in this app');
                 setPackages(response.data.data);

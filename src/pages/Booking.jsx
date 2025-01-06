@@ -32,7 +32,7 @@ function Booking() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/book', {
+            const response = await fetch('https://tour-dashboard.hakimethio.et/api/book', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
