@@ -15,7 +15,8 @@ function Booking() {
         area: '',
         city: '',
         state: '',
-        postCode: ''
+        postCode: '',
+        TourCode:''
     });
 
     const handleChange = (e) => {
@@ -63,7 +64,8 @@ function resetForm() {
             area: '',
             city: '',
             state: '',
-            postCode: ''
+            postCode: '',
+            TourCode:''
         });
 }
     return (
@@ -201,6 +203,20 @@ function resetForm() {
                                 name="time"
                                 id="time"
                                 value={formData.time}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="time" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Tour Code
+                            </label>
+                            <input
+                                placeholder='enter Tour Code '
+                                type="text"
+                                name="TourCode"
+                                id="TourCode"
+                                value={formData.TourCode}
                                 onChange={handleChange}
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
