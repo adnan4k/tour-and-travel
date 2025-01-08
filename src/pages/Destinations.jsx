@@ -44,7 +44,7 @@ function Destinations() {
                 <div className="max-w-full ml-14 md:left-30">
                     <div className="bg-white text-4xl ml-5 font-bold text-indigo-800 black mix-blend-screen px-6 py-5 ">Destinations</div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mx-auto items-center min-h-screen bg-gradient-to-br from-purple-100 to-indigo-200 p-4">
+                <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mx-auto items-center h-full  p-4">
                     {destinations.map((pkg, index) => (
                         <div
                             key={index}

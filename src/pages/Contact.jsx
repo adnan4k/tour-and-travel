@@ -116,14 +116,14 @@ function Contact() {
                         </div>
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Email Us</h3>
-                            <p class="text-gray-700 mt-2">emmavalleyethiopiatours@gmail.com <br />
+                            <p class="text-gray-700 mt-2">jemmavalleyethiopiatours@gmail.com <br />
                                 jemmavalleytours@gmail.com
                             </p>
                         </div>
                         <div class="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors">
                             <h3 class="text-xl font-bold">Visit Us</h3>
                             <p class="text-gray-700 mt-2">
-                                NV Business Center
+                                NB Business Center
                                 8th floor
                                 Mickey Leland St,
                                 Addis Ababa,Ethiopia</p>
@@ -206,7 +206,7 @@ function Contact() {
                     <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
                         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                             <div className="max-w-2xl mx-auto text-center">
-                                <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                                <h2 className="text-2xl font-bold leading-tight text-black sm:text-2xl lg:text-3xl">
                                     Explore Common Questions
                                 </h2>
                             </div>

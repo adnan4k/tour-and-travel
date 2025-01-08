@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 // Package Component
 function Package({ packages }) {
     return (
-        <div>
+        <div className='flex flex-col md:mb-14 items-center  w-full '>
             {/* Title Section */}
             <h1 className="text-4xl font-bold text-center text-gray-800 my-8">Packages</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mx-auto items-center min-h-screen bg-gradient-to-br from-purple-100 to-indigo-200 p-4">
+            <div className="flex-col  justify-center md:mb-28 md:flex md:flex-row  gap-4 w-full   h-full  p-4">
                 {packages.map((pkg, index) => (
                     <div
                         key={index}
@@ -47,18 +47,18 @@ function Package({ packages }) {
                         </div>
                     </div>
                 ))}
-                <Link to='/packages' class=" lg:-my-20 text-[#56C596] border border-[#56C596] py-2 px-6 gap-2 rounded inline-flex items-center">
-                    <span>
-                        View More
-                    </span>
-                    <svg class="w-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                        viewBox="0 0 24 24" className="w-6 h-6 ml-2">
-                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </Link>
+
             </div>
-
-
+            
+            <Link to='/packages' class=" lg:-my-20 text-[#56C596] max-w-44 border ml border-[#56C596] my-4 mt-6 px-6 gap-2 rounded inline-flex items-center">
+                <span>
+                    View More
+                </span>
+                <svg class="w-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                    viewBox="0 0 24 24" className="w-6 h-6 ml-2">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </Link>
         </div>
     );
 }

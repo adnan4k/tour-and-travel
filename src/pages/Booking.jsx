@@ -69,7 +69,7 @@ function resetForm() {
         });
 }
     return (
-        <div className='mb-10'>
+        <div className='mb-10 mx-4'>
             <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
                 {/* Background Image */}
                 <div className="absolute inset-0">

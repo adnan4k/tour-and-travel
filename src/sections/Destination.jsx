@@ -56,12 +56,12 @@ function Destination() {
             });
     }, []);
     return (
-        <div className="">
+        <div className="max-w-screen-2xl mx-auto ">
 
             <DestinationHeader />
             {/* Card Example */}
             <section class="bg-white mb-4">
-                <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
+                <div class="py-4 px-2 mx-auto max-w-screen-2xl sm:py-4 lg:px-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
                         <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
                             <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
@@ -112,15 +112,17 @@ function Destination() {
                     </div>
                 </div>
             </section>
-            <Link to='/destinations' class=" my-12 ml-7 lg:-my-20 text-[#56C596] border border-[#56C596] py-2 px-6 gap-2 rounded inline-flex items-center">
-                    <span>
-                        View More
-                    </span>
-                    <svg class="w-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                        viewBox="0 0 24 24" className="w-6 h-6 ml-2">
-                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </Link>
+            <div className='mx-auto'>
+            <Link to='/destinations' class="  ml-7 lg:-my-20 text-[#56C596] border border-[#56C596] py-2 px-6 gap-2 rounded inline-flex items-center">
+                <span>
+                    View More
+                </span>
+                <svg class="w-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                    viewBox="0 0 24 24" className="w-6 h-6 ml-2">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </Link>
+            </div>
         </div>
     );
 }

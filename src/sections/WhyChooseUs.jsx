@@ -78,11 +78,11 @@ function WhyChooseUs() {
           className="xl:w-1/2 lg:w-7/12 relative w-full lg:mt-0 mt-12 md:px-8"
           role="list"
         >
-          <img
+          {/* <img
             src="https://i.ibb.co/0n6DSS3/bgimg.png"
             className="absolute w-full -ml-12 mt-24"
             alt="background circle images"
-          />
+          /> */}
           {/* Card Items */}
           <div
             role="listitem"

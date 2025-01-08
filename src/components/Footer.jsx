@@ -27,20 +27,42 @@ function Footer() {
                             <li><Link to='destinations' class="hover:text-yellow-400">Destinations</Link></li>
                         </ul>
                     </div>
-                    <div className='mb-1 md:mb-0 w-full'>
-                        <h3 class="text-lg font-bold mb-4">Contact Us</h3>
-                        <ul class="mb-4">
-                            <p class="mb-2"><a href="tel:+251912960059" class="hover:text-yellow-400">+251912960059</a></p>
-                            <p class="mb-2"><a href="tel:+251983038998" class="hover:text-yellow-400">+251983038998</a></p>
-                            <p><a href="mailto:jemmavalleytours@gmail.com" class="hover:text-yellow-400">jemmavalleytours@gmail.com</a></p>
-                            <p><a href="mailto:jemmavalleyethiopiatours@gmail.com" class="hover:text-yellow-400">jemmavalleyethiopiatours@gmail.com</a></p>
+                    <div className="mb-1 md:mb-0 w-full max-w-screen-sm mx-auto">
+                        <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+                        <ul className="mb-4 space-y-2">
+                            <p className="mb-2">
+                                <a href="tel:+251912960059" className="hover:text-yellow-400">
+                                    +251912960059
+                                </a>
+                            </p>
+                            <p className="mb-2">
+                                <a href="tel:+251983038998" className="hover:text-yellow-400">
+                                    +251983038998
+                                </a>
+                            </p>
+                            <p>
+                                <a href="mailto:jemmavalleytours@gmail.com" className="hover:text-yellow-400">
+                                    jemmavalley
+                                    <wbr />
+                                    tours@gmail.com
+                                </a>
+                            </p>
+                            <p>
+                                <a href="mailto:jemmavalleyethiopiatours@gmail.com" className="hover:text-yellow-400">
+                                    jemmavalleyethiopia
+                                    <wbr />
+                                    tours@gmail.com
+                                </a>
+                            </p>
                         </ul>
-                        <div class="mt-4 icons">
-                            <a href="#" class="mr-2"><i class="fab fa-facebook fa-2x"></i></a>
-                            <a href="#" class="mr-2"><i class="fab fa-instagram fa-2x"></i></a>
-                            <a href="mailto:calinscompagnies@calins.com"><i class="far fa-envelope fa-2x"></i></a>
+
+                        <div className="mt-4 flex space-x-4">
+                            <a href="#"><i className="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i className="fab fa-instagram fa-2x"></i></a>
+                            <a href="mailto:calinscompagnies@calins.com"><i className="far fa-envelope fa-2x"></i></a>
                         </div>
                     </div>
+
                     <div class="mb-8 md:mb-0 w-full">
                         <h3 class="text-lg font-bold mb-4">Address</h3>
                         <p class="mb-2">NV Business Center 8th floor Mickey Leland St, Addis Ababa,Ethiopia</p>

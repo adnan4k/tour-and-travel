@@ -44,11 +44,11 @@ function Values() {
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
+    <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-1 py-14">
       <h2 className="font-headline text-2xl font-semibold sm:text-3xl py-5 text-center">
         Our Values
       </h2>
-      <div className="container mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between">
+      <div className="container mx-auto max-w-5xl lg:max-w-screen-2xl flex gap-12 flex-wrap items-start justify-center md:justify-between">
         {/** Individual Service Items */}
         {[
           {

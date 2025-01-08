@@ -57,7 +57,7 @@ const Blog = () => {
       </div>
 
       <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
-        <div className="max-w-full md:left-20">
+        <div className="max-w-full flex justify-center ">
           <div className="bg-white text-4xl font-bold text-indigo-800 black mix-blend-screen px-10 py-5">Blogs</div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
