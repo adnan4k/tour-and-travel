@@ -6,7 +6,7 @@ function Packages() {
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        axios.get('https://tour-dashboard.hakimethio.et/api/packages')
+        axios.get('http://127.0.0.1:8000/api/packages')
             .then(response => {
                 console.log(response.data.data, 'date of packages is here ')
                 setPackages(response.data.data);
@@ -54,7 +54,7 @@ function Packages() {
                             <div className="relative">
                                 <img
                                     className="w-full h-64 object-cover"
-                                    src={`https://tour-dashboard.hakimethio.et/storage/${pkg?.image || ''}`}
+                                    src={`http://127.0.0.1:8000/storage/${pkg?.image || ''}`}
                                     alt={pkg.title}
                                 />
 

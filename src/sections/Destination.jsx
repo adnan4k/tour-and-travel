@@ -48,7 +48,7 @@ function Destination() {
 
   useEffect(() => {
     axios
-      .get("https://tour-dashboard.hakimethio.et/api/home-destinations")
+      .get("http://127.0.0.1:8000/api/home-destinations")
       .then((response) => {
         setDestinations(response.data);
       })
@@ -64,12 +64,12 @@ function Destination() {
         <div class="py-4 px-2 mx-auto max-w-screen-2xl sm:py-4 lg:px-6">
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
             <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
-              <a
-                href=""
+              <Link
+                to={`/package-detail/${ destinations?.data?.[0]?.id}`}
                 class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
               >
                 <img
-                  src={`https://tour-dashboard.hakimethio.et/storage/${
+                  src={`http://127.0.0.1:8000/storage/${
                     destinations?.data?.[0]?.image || ""
                   }`}
                   alt=""
@@ -79,15 +79,15 @@ function Destination() {
                 <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">
                   {destinations?.data?.[0]?.title}
                 </h3>
-              </a>
+              </Link>
             </div>
             <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
-              <a
-                href=""
+            <Link
+                to={`/package-detail/${ destinations?.data?.[1]?.id}`}
                 class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4"
               >
                 <img
-                  src={`https://tour-dashboard.hakimethio.et/storage/${
+                  src={`http://127.0.0.1:8000/storage/${
                     destinations?.data?.[1]?.image || ""
                   }`}
                   alt={destinations?.data?.[1]?.title}
@@ -97,14 +97,14 @@ function Destination() {
                 <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">
                   {destinations?.data?.[1]?.title}
                 </h3>
-              </a>
+              </Link>
               <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
-                <a
-                  href=""
+              <Link
+                to={`/package-detail/${ destinations?.data?.[2]?.id}`}
                   class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
                 >
                   <img
-                    src={`https://tour-dashboard.hakimethio.et/storage/${
+                    src={`http://127.0.0.1:8000/storage/${
                       destinations?.data?.[2]?.image || ""
                     }`}
                     alt=""
@@ -114,13 +114,13 @@ function Destination() {
                   <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">
                     {destinations?.data?.[2]?.title}
                   </h3>
-                </a>
-                <a
-                  href=""
+                </Link>
+                <Link
+                to={`/package-detail/${ destinations?.data?.[3]?.id}`}
                   class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
                 >
                   <img
-                    src={`https://tour-dashboard.hakimethio.et/storage/${
+                    src={`http://127.0.0.1:8000/storage/${
                       destinations?.data?.[3]?.image || ""
                     }`}
                     alt=""
@@ -130,16 +130,16 @@ function Destination() {
                   <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">
                     {destinations?.data?.[3]?.title}
                   </h3>
-                </a>
+                </Link>
               </div>
             </div>
             <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
-              <a
-                href=""
+            <Link
+                to={`/package-detail/${ destinations?.data?.[4]?.id}`}
                 class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
               >
                 <img
-                  src={`https://tour-dashboard.hakimethio.et/storage/${
+                  src={`http://127.0.0.1:8000/storage/${
                     destinations?.data?.[4]?.image || ""
                   }`}
                   alt={destinations?.data?.[5]?.title}
@@ -149,18 +149,17 @@ function Destination() {
                 <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">
                   {destinations?.data?.[4]?.title}
                 </h3>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </section>
       <div className="flex justify-center mb-4">
         <Link
-        className="bg-[#56C596] focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-white rounded-full py-4 px-6"
+          className="bg-[#56C596] focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-white rounded-full py-4 px-6"
           to="/about"
         >
-        
-            View More
+          View More
         </Link>
       </div>
     </div>
