@@ -6,7 +6,7 @@ function Destinations() {
     const [destinations, setDestinations] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/destinations')
+        axios.get('https://tour-dashboard.hakimethio.et/api/destinations')
             .then(response => {
                 setDestinations(response.data.data);
                 console.log(destinations,'destinations here')
@@ -55,7 +55,7 @@ function Destinations() {
                             <div className="relative">
                                 <img
                                     className="w-full h-64 object-cover"
-                                    src={`http://127.0.0.1:8000/storage/${pkg?.image || ''}`}
+                                    src={`https://tour-dashboard.hakimethio.et/storage/${pkg?.image || ''}`}
                                     alt={pkg.title}
                                 />
                                 {pkg.featured && (

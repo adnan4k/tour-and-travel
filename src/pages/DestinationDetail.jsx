@@ -13,7 +13,7 @@ export default function DestinationDetail() {
     useEffect(() => {
         const fetchPackageDetail = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/destination-detail/${id}`);
+                const response = await axios.get(`https://tour-dashboard.hakimethio.et/api/destination-detail/${id}`);
                 setPackageDetail(response.data.data);
                 console.log(response.data.data, 'API response');
             } catch (error) {
@@ -39,7 +39,7 @@ export default function DestinationDetail() {
                     className="bg-cover bg-center text-center overflow-hidden"
                     style={{
                         minHeight: '500px',
-                        backgroundImage: `url('http://127.0.0.1:8000/storage/${packageDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
+                        backgroundImage: `url('https://tour-dashboard.hakimethio.et/storage/${packageDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
                     }}
                     title={packageDetail?.title || 'Package Image'}
                 ></div>

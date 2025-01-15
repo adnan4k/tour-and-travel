@@ -12,7 +12,7 @@ export default function PackageDetail() {
     useEffect(() => {
         const fetchPackageDetail = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/destination-detail/${id}`);
+                const response = await axios.get(`https://tour-dashboard.hakimethio.et/api/destination-detail/${id}`);
                 setPackageDetail(response.data.data);
                 console.log(response.data.data, 'API response');
             } catch (error) {

@@ -48,7 +48,7 @@ function Destination() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/home-destinations")
+      .get("https://tour-dashboard.hakimethio.et/api/home-destinations")
       .then((response) => {
         setDestinations(response.data);
       })
@@ -65,11 +65,11 @@ function Destination() {
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
             <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
               <Link
-                to={`/package-detail/${ destinations?.data?.[0]?.id}`}
+                to={`/destination-detial/${ destinations?.data?.[0]?.id}`}
                 class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
               >
                 <img
-                  src={`http://127.0.0.1:8000/storage/${
+                  src={`https://tour-dashboard.hakimethio.et/storage/${
                     destinations?.data?.[0]?.image || ""
                   }`}
                   alt=""
@@ -83,11 +83,11 @@ function Destination() {
             </div>
             <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
             <Link
-                to={`/package-detail/${ destinations?.data?.[1]?.id}`}
+                to={`/destination-detial/${ destinations?.data?.[1]?.id}`}
                 class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4"
               >
                 <img
-                  src={`http://127.0.0.1:8000/storage/${
+                  src={`https://tour-dashboard.hakimethio.et/storage/${
                     destinations?.data?.[1]?.image || ""
                   }`}
                   alt={destinations?.data?.[1]?.title}
@@ -100,11 +100,11 @@ function Destination() {
               </Link>
               <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
               <Link
-                to={`/package-detail/${ destinations?.data?.[2]?.id}`}
+                to={`/destination-detial/${ destinations?.data?.[2]?.id}`}
                   class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
                 >
                   <img
-                    src={`http://127.0.0.1:8000/storage/${
+                    src={`https://tour-dashboard.hakimethio.et/storage/${
                       destinations?.data?.[2]?.image || ""
                     }`}
                     alt=""
@@ -116,11 +116,11 @@ function Destination() {
                   </h3>
                 </Link>
                 <Link
-                to={`/package-detail/${ destinations?.data?.[3]?.id}`}
+                to={`/destination-detial/${ destinations?.data?.[3]?.id}`}
                   class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
                 >
                   <img
-                    src={`http://127.0.0.1:8000/storage/${
+                    src={`https://tour-dashboard.hakimethio.et/storage/${
                       destinations?.data?.[3]?.image || ""
                     }`}
                     alt=""
@@ -135,11 +135,11 @@ function Destination() {
             </div>
             <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
             <Link
-                to={`/package-detail/${ destinations?.data?.[4]?.id}`}
+                to={`/destination-detail/${ destinations?.data?.[4]?.id}`}
                 class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
               >
                 <img
-                  src={`http://127.0.0.1:8000/storage/${
+                  src={`https://tour-dashboard.hakimethio.et/storage/${
                     destinations?.data?.[4]?.image || ""
                   }`}
                   alt={destinations?.data?.[5]?.title}
