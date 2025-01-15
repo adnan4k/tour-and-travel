@@ -24,10 +24,7 @@ function AboutUsSection() {
                         <div class="max-w-lg">
                             <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">About Us</h2>
                             <p class="mt-4 text-gray-600 text-lg">Jemma Valley Ethiopia Tours envisions becoming a leading provider of immersive and transformative travel experiences, showcasing Ethiopia's rich cultural heritage, diverse landscapes, and historical significance. The company aims to promote sustainable tourism, fostering responsible travel that supports local communities and conserves the environment. By offering authentic experiences in Ethiopia's undiscovered gems, Jemma Valley Ethiopia Tours strives to connect global travelers to the soul of the country, allowing them to explore both popular and hidden destinations while respecting the cultural fabric of Ethiopia..</p>
-                            <div class="mt-8">
-                                <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Learn more about us
-                                    <span class="ml-2">&#8594;</span></a>
-                            </div>
+                          
                         </div>
                         <div class="mt-12 md:mt-0">
                             <Swiper

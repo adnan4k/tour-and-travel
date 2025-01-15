@@ -12,6 +12,7 @@ import Packages from './pages/Packages';
 import Destinations from './pages/Destinations';
 import PackageDetial from './pages/PackageDetial';
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import DestinationDetail from './pages/DestinationDetail';
 
 
 
@@ -22,6 +23,7 @@ function App() {
             <TawkMessengerReact
                 propertyId="6776e68849e2fd8dfe01c7b8"
                 widgetId="1igk791gc" />
+                
             <Routes>
 
                 {/* Define Routes */}
@@ -34,6 +36,8 @@ function App() {
                 <Route path='/packages' element={<Packages />} />
                 <Route path='/destinations' element={<Destinations />} />
                 <Route path='/package-detail/:id' element={<PackageDetial />} />
+                <Route path='/destination-detail/:id' element={<DestinationDetail />} />
+
                 <Route path='/blog-detail/:id' element={<BlogDetail />} />
 
 

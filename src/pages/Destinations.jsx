@@ -6,9 +6,10 @@ function Destinations() {
     const [destinations, setDestinations] = useState([]);
 
     useEffect(() => {
-        axios.get('https://tour-dashboard.hakimethio.et/api/destinations')
+        axios.get('http://127.0.0.1:8000/api/destinations')
             .then(response => {
                 setDestinations(response.data.data);
+                console.log(destinations,'destinations here')
             })
             .catch(error => {
                 console.error('There was an error fetching the Destinations!', error);
@@ -46,14 +47,15 @@ function Destinations() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mx-auto items-center h-full  p-4">
                     {destinations.map((pkg, index) => (
-                        <div
+                        <Link 
+                        to={`/destination-detail/${pkg.id}`}
                             key={index}
                             className="col-span-1 md:col-span-2 gap-6 max-w-md w-full bg-white rounded-xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105"
                         >
                             <div className="relative">
                                 <img
                                     className="w-full h-64 object-cover"
-                                    src={`https://tour-dashboard.hakimethio.et/storage/${pkg?.image || ''}`}
+                                    src={`http://127.0.0.1:8000/storage/${pkg?.image || ''}`}
                                     alt={pkg.title}
                                 />
                                 {pkg.featured && (
@@ -69,7 +71,7 @@ function Destinations() {
 
 
                             </div>
-                        </div>
+                        </Link>
                     ))}
 
                 </div>

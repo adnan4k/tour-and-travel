@@ -60,6 +60,7 @@ function Packages() {
 
                             </div>
                             <div className="p-6">
+                                <Link to='/book'  state={{ tourCode: pkg.code }} >
                                 <h2 className="text-2xl font-bold mb-2 text-gray-800">{pkg.title}</h2>
                                 <p className="text-gray-600 mb-4">{pkg.description}</p>
 
@@ -80,6 +81,7 @@ function Packages() {
                                         <span>Read more</span>
                                     </Link>
                                 </div>
+                                </Link>
                             </div>
 
                         </div>

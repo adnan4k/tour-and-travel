@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 
-export default function PackageDetail() {
+export default function DestinationDetail() {
     const [packageDetail, setPackageDetail] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { id } = useParams();
+    console.log(id,'here is id ');
 
     useEffect(() => {
         const fetchPackageDetail = async () => {
@@ -38,7 +39,7 @@ export default function PackageDetail() {
                     className="bg-cover bg-center text-center overflow-hidden"
                     style={{
                         minHeight: '500px',
-                        backgroundImage: `url('https://tour-dashboard.hakimethio.et/storage/${packageDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
+                        backgroundImage: `url('http://127.0.0.1:8000/storage/${packageDetail?.image || ''}?quality=85&w=1201&h=676&crop=1')`,
                     }}
                     title={packageDetail?.title || 'Package Image'}
                 ></div>
@@ -53,11 +54,7 @@ export default function PackageDetail() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm max-w-md mx-auto">
-                    <p className="text-blue-600 font-semibold text-sm italic">
-                        Tour Code: <span className="text-blue-800 font-bold">{packageDetail.code}</span>
-                    </p>
-                </div>
+         
             </div>
         </div>
     );

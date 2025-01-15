@@ -3,6 +3,7 @@ import AboutHero from '../sections/AboutHero';
 import Testimony from '../sections/Testimony';
 import AboutUsSection from '../sections/AboutUsSection';
 import Team from '../sections/Team';
+import Values from '../sections/Values';
 
 
 function About() {
@@ -14,6 +15,8 @@ function About() {
           <AboutHero/>
           <Testimony/>
           <AboutUsSection/>
+          <Values />
+
           <Team/>
 
         </div>

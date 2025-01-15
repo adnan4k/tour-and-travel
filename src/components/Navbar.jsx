@@ -28,7 +28,7 @@ function Navbar() {
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <Link to="/" className="flex items-center">
                     <img
-                        src="assets/photos/jemma-logo.png"
+                        src="tour-logo.png"
                         className="h-6 w-9 rounded-full mr-3 sm:h-9"
                         alt="Landwind Logo"
                     />
@@ -134,18 +134,7 @@ function Navbar() {
                                     Destinations
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    to="/book"
-                                    onClick={handleCloseMenu}
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/book')
-                                        ? 'bg-[#56C596] text-white'
-                                        : 'text-gray-700 hover:text-[#56C596]'
-                                        }`}
-                                >
-                                    Book
-                                </Link>
-                            </li>
+                      
                             <li>
                                 <Link
                                     to="/contact-us"
@@ -221,17 +210,7 @@ function Navbar() {
                                     Destinations
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    to="/book"
-                                    className={`block py-4 pl-3 px-6 rounded-2xl pr-4 lg:px-6 lg:py-1.5 ${isActive('/book')
-                                        ? 'bg-[#56C596] text-white'
-                                        : 'text-gray-700 hover:text-[#56C596]'
-                                        }`}
-                                >
-                                    Book
-                                </Link>
-                            </li>
+                        
                             <li>
                                 <Link
                                     to="/contact-us"

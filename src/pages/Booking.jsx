@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 function Booking() {
+    const location = useLocation();
+    console.log(location,'here is location')
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         email: '',
         members: '',
-        place: '',
-        days: '',
         date: '',
-        time: '',
-        area: '',
-        city: '',
-        state: '',
-        postCode: '',
-        TourCode:''
-    });
+        TourCode: location.state?.tourCode || '',
+        });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -27,10 +22,17 @@ function Booking() {
         });
     };
 
-  
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+    
+        // Validation: Check if all fields are filled
+        const { name, phone, email, members, date, TourCode } = formData;
+        if (!name || !phone || !email || !members || !date || !TourCode) {
+            toast.error("All fields are required!");
+            return;
+        }
+    
         try {
             const response = await fetch('https://tour-dashboard.hakimethio.et/api/book', {
                 method: 'POST',
@@ -39,6 +41,7 @@ function Booking() {
                 },
                 body: JSON.stringify(formData)
             });
+    
             if (response.ok) {
                 // Handle successful response
                 toast.success('Booking successful');
@@ -51,28 +54,23 @@ function Booking() {
             toast.error('Error: ' + error.message);
         }
     };
+    
 function resetForm() {
         setFormData({
             name: '',
             phone: '',
             email: '',
             members: '',
-            place: '',
             days: '',
             date: '',
-            time: '',
-            area: '',
-            city: '',
-            state: '',
-            postCode: '',
             TourCode:''
         });
 }
     return (
-        <div className='mb-10 mx-4'>
+        <div className='mb-10 '>
             <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
                 {/* Background Image */}
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 w-full">
                     <img
                         src="/assets/photos/tour.jpg"
                         alt="Background Image"
@@ -94,7 +92,7 @@ function resetForm() {
                 </div>
             </div>
             <div className="flex items-center justify-center p-12"></div>
-            <div className="mx-auto w-full max-w-[800px] bg-white">
+            <div className="md:mx-auto w-full max-w-[800px] mx-4  bg-white">
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="mb-5">
@@ -141,7 +139,7 @@ function resetForm() {
                         </div>
                         <div className="mb-5">
                             <label htmlFor="members" className="mb-3 block text-base font-medium text-[#07074D]">
-                                Number of Members
+                                Number of Team
                             </label>
                             <input
                                 type="text"
@@ -149,60 +147,6 @@ function resetForm() {
                                 id="members"
                                 placeholder="Enter Number of Members"
                                 value={formData.members}
-                                onChange={handleChange}
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                            />
-                        </div>
-                        <div className="mb-5">
-                            <label htmlFor="place" className="mb-3 block text-base font-medium text-[#07074D]">
-                                Place
-                            </label>
-                            <input
-                                type="text"
-                                name="place"
-                                id="place"
-                                placeholder="Enter Place You Want To Visit"
-                                value={formData.place}
-                                onChange={handleChange}
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                            />
-                        </div>
-                        <div className="mb-5">
-                            <label htmlFor="days" className="mb-3 block text-base font-medium text-[#07074D]">
-                                Days
-                            </label>
-                            <input
-                                type="text"
-                                name="days"
-                                id="days"
-                                placeholder="Enter For How Many Days You Want To Visit"
-                                value={formData.days}
-                                onChange={handleChange}
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                            />
-                        </div>
-                        <div className="mb-5">
-                            <label htmlFor="date" className="mb-3 block text-base font-medium text-[#07074D]">
-                                Date
-                            </label>
-                            <input
-                                type="date"
-                                name="date"
-                                id="date"
-                                value={formData.date}
-                                onChange={handleChange}
-                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                            />
-                        </div>
-                        <div className="mb-5">
-                            <label htmlFor="time" className="mb-3 block text-base font-medium text-[#07074D]">
-                                Time
-                            </label>
-                            <input
-                                type="time"
-                                name="time"
-                                id="time"
-                                value={formData.time}
                                 onChange={handleChange}
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
@@ -222,8 +166,24 @@ function resetForm() {
                             />
                         </div>
                     
+                        <div className="mb-5">
+                            <label htmlFor="date" className="mb-3 block text-base font-medium text-[#07074D]">
+                                Date
+                            </label>
+                            <input
+                                type="date"
+                                name="date"
+                                id="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                        </div>
+                     
+                   
+                    
                     </div>
-                    <div>
+                    <div className='mx-auto w-1/2'>
                         <button
                             type="submit"
                             className="hover:shadow-form w-full rounded-md bg-[#56C596] py-3 px-8 text-center text-base font-semibold text-white outline-none"

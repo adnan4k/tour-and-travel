@@ -14,7 +14,6 @@ function Home() {
             <div>
                 <Hero />
                 <Destination/>
-                <Values />
                 <EnjoymentVideo />
                 <WhyChooseUs />
                 {/* <Gallery /> */}
