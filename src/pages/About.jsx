@@ -17,7 +17,7 @@ function About() {
           <AboutUsSection/>
           <Values />
 
-          <Team/>
+          {/* <Team/> */}
 
         </div>
     );
