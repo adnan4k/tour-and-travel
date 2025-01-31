@@ -129,9 +129,7 @@ function Footer() {
         </div>
         <p class="text-center mt-1">
           &copy; {new Date().getFullYear()} JemmaValleyTours - All rights reserved. Developed By
-          <a href="https://www.kasmasolution.com/" target="_blank" rel="noopener noreferrer" class="text-blue-500 mx-2 hover:underline">
             Kasma Tech Solution
-          </a>
         </p>
 
       </footer>
