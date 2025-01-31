@@ -67,7 +67,7 @@ function resetForm() {
         });
 }
     return (
-        <div className='mb-10 '>
+        <div className='mb-10 flex flex-col w-full justify-center '>
             <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-24 font-[sans-serif]">
                 {/* Background Image */}
                 <div className="absolute inset-0 w-full">
@@ -92,10 +92,10 @@ function resetForm() {
                 </div>
             </div>
             <div className="flex items-center justify-center p-12"></div>
-            <div className="md:mx-auto w-full max-w-[800px] mx-4  bg-white">
-                <form onSubmit={handleSubmit}>
+            <div className="mx-auto flex justify-center w-full mx-4  bg-white">
+                <form className='flex w-3/4 flex-col justify-center' onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="mb-5">
+                        <div className="mb-5 w-full">
                             <label htmlFor="name" className="mb-3 block text-base font-medium text-[#07074D]">
                                 Full Name
                             </label>

@@ -7,7 +7,7 @@ function Footer() {
     <div>
       <footer class="text-white px-8 py-6 bg-gray-800">
         <div class="container  max-w-full mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
-        <div class="mb-8 md:mb-0 w-full">
+          <div class="mb-8 md:mb-0 w-full">
             <h3 class="text-lg font-bold mb-4">Links</h3>
             <ul>
               <li>
@@ -21,7 +21,7 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="contact" class="hover:text-yellow-400">
+                <Link to="contact-us" class="hover:text-yellow-400">
                   Contact Us
                 </Link>
               </li>
@@ -96,7 +96,7 @@ function Footer() {
                 href="mailto:info@jemmavalleytour.com	"
                 className="hover:text-yellow-400"
               >
-                info@jemmavalleytour.com	
+                info@jemmavalleytour.com
               </a>
             </p>
           </div>
@@ -117,7 +117,7 @@ function Footer() {
               </div>
             </ul>
           </div>
-       
+
 
           <div class="mb-8 md:mb-0 w-full">
             <h3 class="text-lg font-bold mb-4">Address</h3>
@@ -128,12 +128,12 @@ function Footer() {
           </div>
         </div>
         <p class="text-center mt-1">
-  &copy; 2024 JemmaValleyTours - All rights reserved. Developed By 
-  <a href="https://www.kasmasolution.com/" target="_blank" rel="noopener noreferrer" class="text-blue-500 mx-2 hover:underline">
-    Kasma Tech Solution
-  </a>
-</p>
-  
+          &copy; {new Date().getFullYear()} JemmaValleyTours - All rights reserved. Developed By
+          <a href="https://www.kasmasolution.com/" target="_blank" rel="noopener noreferrer" class="text-blue-500 mx-2 hover:underline">
+            Kasma Tech Solution
+          </a>
+        </p>
+
       </footer>
     </div>
   );

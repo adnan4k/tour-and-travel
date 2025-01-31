@@ -246,12 +246,7 @@ function Contact() {
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-center text-gray-600 text-base mt-9">
-                                Still have questions?
-                                <span className="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">
-                                    Contact our support
-                                </span>
-                            </p>
+                          
                         </div>
                     </section>
                 </div>
