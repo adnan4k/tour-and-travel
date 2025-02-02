@@ -20,18 +20,7 @@ function AboutHero() {
     }, []);
 
     const sections = [
-        {
-            id: 1,
-            title: 'Welcome to Adventure',
-            subtitle: 'Explore breathtaking destinations around the globe with our curated travel packages.',
-            background: '/assets/photos/beautifullmaintain.jpg',
-        },
-        {
-            id: 2,
-            title: 'Popular Destinations',
-            subtitle: 'Discover the most sought-after travel spots, from exotic beaches to vibrant cities.',
-            background: '/assets/photos/zebras.jpg',
-        },
+ 
         {
             id: 3,
             title: 'Why Travel With Us?',
@@ -55,7 +44,7 @@ function AboutHero() {
 
                     {/* Content */}
                     <div className="relative z-10 text-center text-white">
-                        <h2 className="text-5xl font-bold mb-4">{section.title}</h2>
+                        <h2 className="text-4xl font-bold mb-4">{section.title}</h2>
                         {section.subtitle && (
                             <p className="text-lg max-w-lg mx-auto">{section.subtitle}</p>
                         )}

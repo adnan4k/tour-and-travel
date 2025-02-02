@@ -47,23 +47,23 @@ function WhyChooseUs() {
 
   return (
     <section>
-      <div className="lg:flex items-center justify-between p-6 md:p-12 dark:bg-gray-700">
+      <div className="lg:flex items-center justify-between p-6 md:p-12 ">
         <div className="lg:w-1/2 w-full">
           <h1
             role="heading"
-            className="md:text-5xl text-3xl font-bold leading-10 mt-3 text-gray-800 dark:text-white"
+            className="md:text-5xl text-3xl font-bold leading-10 mt-3 text-gray-800 "
           >
             Why Choose Us
           </h1>
           <p
             role="contentinfo"
-            className="text-base leading-5 mt-5 text-gray-600 dark:text-gray-200"
+            className="text-base leading-5 mt-5 text-gray-600 "
           >
            Jemma Valley Ethiopia Tours envisions becoming a leading provider of immersive and transformative travel experiences, showcasing Ethiopia's rich cultural heritage, diverse landscapes, and historical significance.
           </p>
-          <div className="w-56">
+          <div className="w-34">
             <Link to='/about'
-              className="bg-gray-100 dark:bg-gray-800 shadow rounded-full flex items-center mt-10"
+              className=" flex items-center mt-10"
             >
               <div
                 className="bg-[#56C596] focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-white rounded-full py-4 px-6"
@@ -86,46 +86,46 @@ function WhyChooseUs() {
           {/* Card Items */}
           <div
             role="listitem"
-            className="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg p-8 relative z-30 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
+            className="bg-white  cursor-pointer shadow rounded-lg p-8 relative z-30 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
           >
             <div className="md:flex items-center justify-between">
-              <h2 className="text-2xl  font-semibold leading-6 text-gray-800 dark:text-white">
+              <h2 className="text-2xl  font-semibold leading-6 text-gray-800 ">
                 Innovation
               </h2>
 
             </div>
-            <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200">
+            <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 ">
               We are committed to constantly improving our offerings by integrating new technologies and trends in the travel industry            </p>
           </div>
 
           <div
             role="listitem"
-            className="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg mt-3 flex relative z-30 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
+            className="bg-white  cursor-pointer shadow rounded-lg mt-3 flex relative z-30 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
           >
             <div className="w-2.5 h-auto bg-[#56C596] rounded-tl-md rounded-bl-md"></div>
             <div className="w-full p-8">
               <div className="md:flex items-center justify-between">
-                <h2 className="text-2xl font-semibold leading-6 text-gray-800 dark:text-white">
+                <h2 className="text-2xl font-semibold leading-6 text-gray-800 ">
                   Sustainability
                 </h2>
 
               </div>
-              <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200">
+              <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 ">
                 We are committed to promoting eco-friendly travel and preserving the natural beauty of Ethiopia.</p>
             </div>
           </div>
 
           <div
             role="listitem"
-            className="bg-white dark:bg-gray-800 cursor-pointer shadow rounded-lg p-8 relative z-30 mt-7 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
+            className="bg-white  cursor-pointer shadow rounded-lg p-8 relative z-30 mt-7 transform transition-transform hover:scale-105 hover:bg-gray-300 hover:text-white"
           >
             <div className="md:flex items-center justify-between">
-              <h2 className="text-2xl w-full font-semibold leading-6 text-gray-800 dark:text-white">
+              <h2 className="text-2xl w-full font-semibold leading-6 text-gray-800 ">
                 Excellence
               </h2>
 
             </div>
-            <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200">
+            <p className="md:w-80 text-base leading-6 mt-4 text-gray-600 ">
             We strive to deliver exceptional service and create unforgettable experiences for our clients.            </p>
           </div>
         </div>

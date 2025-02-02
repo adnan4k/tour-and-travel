@@ -91,10 +91,10 @@ function Hero() {
                 <div className="absolute inset-0 bg-black opacity-50"></div>
             </div>
             <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
-                <h1 className="hero-title text-5xl font-bold leading-tight mb-4">
+                <h1 className="hero-title text-2xl font-bold leading-tight mb-4">
                     {currentData?.title}
                 </h1>
-                <p className="hero-description text-lg text-gray-300 mb-8">
+                <p className="hero-description text-[16px] text-gray-300 mb-8">
                     {currentData?.description}
                 </p>
             </div>

@@ -29,12 +29,12 @@ const TestimonialSlider = () => {
     }, []);
     return (
 
-        <section class="py-24 ">
+        <section class="py-14 ">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div
                     class="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
                     <div class="w-full lg:w-2/5">
-                        <h2 class="text-4xl font-bold text-gray-900 leading-[3.25rem] mb-8">Customers  <span
+                        <h2 class="text-3xl font-bold text-gray-900 leading-[3.25rem] mb-8">Customers  <span
                             class=" text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-violet-600">Testimonials</span>
                         </h2>
                         {/* <!-- Slider controls --> */}
@@ -104,7 +104,7 @@ const TestimonialSlider = () => {
                                         <SwiperSlide>
                                             <div class="swiper-slide group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-6 transition-all duration-500 hover:border-indigo-600">
                                                 <div class="flex items-center gap-5 mb-5 sm:mb-9">
-                                                    <img class="rounded-full max-w-36 object-cover"
+                                                    <img class="w-28 h-28 rounded-full border-2 border-purple-500"
                                                         src={`https://dashboard.jemmavalleytour.com/storage/${item?.image || ''}`}
                                                         alt="avatar" />
                                                     <div class="grid gap-1">
@@ -146,7 +146,7 @@ const TestimonialSlider = () => {
                                                     </svg>
                                                 </div>
                                                 <p
-                                                    class="text-sm text-gray-500 leading-6 transition-all duration-500 min-h-24  group-hover:text-gray-800">
+                                                    class="text-sm text-gray-500 leading-6 transition-all duration-500   group-hover:text-gray-800">
                                                     {item.content}
                                                 </p>
 
