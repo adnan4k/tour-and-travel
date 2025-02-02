@@ -13,9 +13,10 @@ function About() {
     return (
         <div>
           <AboutHero/>
-          <Testimony/>
           <AboutUsSection/>
           <Values />
+          <Testimony/>
+
 
           {/* <Team/> */}
 
