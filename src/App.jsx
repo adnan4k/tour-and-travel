@@ -22,7 +22,7 @@ function App() {
             <Navbar />
             <TawkMessengerReact
                 propertyId="6776e68849e2fd8dfe01c7b8"
-                widgetId="1igk791gc"
+                widgetId="1ij2eqpu4"
             />
 
 
