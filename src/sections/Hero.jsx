@@ -17,7 +17,7 @@ function Hero() {
             try {
                 const response = await fetch("https://dashboard.jemmavalleytour.com/api/hero-slider"); // Replace with your API URL
                 const data = await response.json();
-                console.log(data.data,'here it is ')
+                console.log(data.data, 'here it is ');
                 setSlidesData(data.data);
                 setLoading(false);
             } catch (error) {
@@ -73,15 +73,13 @@ function Hero() {
 
     // Show a loading state until the slides are fetched
     if (loading) {
-        return <div className="text-center text-white h-screen flex items-center justify-center">Loading slides...</div>;
+        return <div className="text-center text-white h-[75vh] flex items-center justify-center">Loading slides...</div>;
     }
 
     const currentData = slidesData[currentSlide];
 
     return (
-        <div
-            className={`relative bg-gradient-to-r  h-screen text-white overflow-hidden`}
-        >
+        <div className="relative bg-gradient-to-r h-[50vh] md:h-[75vh] text-white overflow-hidden">
             <div className="absolute inset-0">
                 <img
                     src={`https://dashboard.jemmavalleytour.com/storage/${currentData?.image}`}
